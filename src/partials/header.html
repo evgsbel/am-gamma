@@ -1,0 +1,44 @@
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-2 header__profile profile">
+          <a href="" class="profile__link">
+            <svg>
+              <use xlink:href="assets/img/sprite.svg#icon-reg"></use>
+            </svg>
+            Регистрация
+          </a>
+          <a href="" class="profile__link">
+            <svg>
+              <use xlink:href="assets/img/sprite.svg#icon-user"></use>
+            </svg>
+            Вход
+          </a>
+        </div>
+        <div class="col-5 header__contacts">
+          <a href="emailto:info@am-gamma.ru" class="header__email">
+            <svg>
+              <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
+            </svg>
+            info@am-gamma.ru
+          </a>
+          <a href="tel:+73832093131" class="header__phone">+7 383 209 31 31 <span>(Нск)</span></a>
+          <a href="tel:+74997097031" class="header__phone">+7 499 709 70 31 <span>(Мск)</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-2 mr-auto">
+          {{> logo}}
+        </div>
+        <div class="col-9">
+          {{> nav}}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

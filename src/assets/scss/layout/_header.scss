@@ -1,0 +1,76 @@
+.header {
+  position: relative;
+  background-color: transparent;
+  z-index: 10;
+  &__top {
+    margin-bottom: 40px;
+    padding: 10px 0;
+    background-color: $basic-black;
+  }
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__email {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    font-size: 0.75em;
+    line-height: 1.7;
+    color: $white;
+    svg {
+      margin-right: 7px;
+      width: 12px;
+      height: 14px;
+      color: $green;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+  &__phone {
+    font-weight: 700;
+    font-size: 0.9em;
+    line-height: 1.2;
+    color: $green;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+    &:hover {
+      color: $green;
+    }
+    span {
+      color: $white;
+    }
+  }
+  &__bottom {
+
+  }
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 0.75em;
+    line-height: 1.7;
+    color: $white;
+    transition: color .3s ease-in-out;
+    &:not(:last-child) {
+      margin-right: 2em;
+    }
+    svg {
+      margin-right: 7px;
+      width: 12px;
+      height: 14px;
+      color: $green;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}

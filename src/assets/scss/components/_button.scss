@@ -1,0 +1,16 @@
+.btn {
+  font-weight: 700;
+  font-size: 1.125em;
+  line-height: 1.2;
+  color: $white;
+  background: $green;
+  border-radius: 10px;
+  transition: transform .3s ease-in-out;
+  &:hover {
+    color: $white;
+    transform: translateY(-5px);
+  }
+  &:active {
+    transform: scale(.95);
+  }
+}
