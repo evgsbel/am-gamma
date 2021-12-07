@@ -1,0 +1,58 @@
+// pagination
+
+.slider-pagination {
+  position: relative;
+  z-index: 50;
+  display: flex;
+  gap: 20px;
+  span {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #dfdfdf;
+    border-radius: 50%;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      display: block;
+      margin: 0 auto;
+      width: 8px;
+      height: 8px;
+      background-color: transparent;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      transition: background-color .3s ease-in-out;
+    }
+    &.swiper-pagination-bullet-active {
+      &::before {
+        background-color: $green;
+      }
+    }
+  }
+}
+
+// navigation
+
+.slider-navigation {
+  background-color: #f9f9f9;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  &_prev {
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.64645 0.646447C5.84171 0.451184 6.15829 0.451184 6.35355 0.646447C6.54882 0.841709 6.54882 1.15829 6.35355 1.35355L5.64645 0.646447ZM1 6L0.646447 6.35355C0.451184 6.15829 0.451184 5.84171 0.646447 5.64645L1 6ZM6.35355 10.6464C6.54882 10.8417 6.54882 11.1583 6.35355 11.3536C6.15829 11.5488 5.84171 11.5488 5.64645 11.3536L6.35355 10.6464ZM6.35355 1.35355L1.35355 6.35355L0.646447 5.64645L5.64645 0.646447L6.35355 1.35355ZM1.35355 5.64645L6.35355 10.6464L5.64645 11.3536L0.646447 6.35355L1.35355 5.64645Z' fill='black'/%3E%3C/svg%3E%0A");
+  }
+  &_next {
+    background-image: url("data:image/svg+xml,%3Csvg width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.35355 0.646447C1.15829 0.451184 0.841709 0.451184 0.646447 0.646447C0.451184 0.841709 0.451184 1.15829 0.646447 1.35355L1.35355 0.646447ZM6 6L6.35355 6.35355C6.54882 6.15829 6.54882 5.84171 6.35355 5.64645L6 6ZM0.646447 10.6464C0.451184 10.8417 0.451184 11.1583 0.646447 11.3536C0.841709 11.5488 1.15829 11.5488 1.35355 11.3536L0.646447 10.6464ZM0.646447 1.35355L5.64645 6.35355L6.35355 5.64645L1.35355 0.646447L0.646447 1.35355ZM5.64645 5.64645L0.646447 10.6464L1.35355 11.3536L6.35355 6.35355L5.64645 5.64645Z' fill='black'/%3E%3C/svg%3E%0A");
+  }
+  &__wrapper {
+    display: flex;
+    gap: 10px;
+  }
+}

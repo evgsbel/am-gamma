@@ -4,14 +4,6 @@ title: Home Page
 script: main
 ---
 
-<!--<p style="font-weight: 800;">Black</p>-->
-<!--<p style="font-weight: 700;">Bold</p>-->
-<!--<p style="font-weight: 500;">Medium</p>-->
-<!--<p style="font-weight: 400;">Regular</p>-->
-<!--<p style="font-weight: 300;">Light</p>-->
-<!--<p style="font-weight: 100;">Thin</p>-->
-
-
 <section class="hero">
   <div class="container">
     <div class="row">
@@ -175,8 +167,14 @@ script: main
 <section class="case">
   <div class="container">
     <div class="row">
-      <div class="col-10 offset-1">
+      <div class="col-9 offset-1">
         <h2 class="title-h2 case__title">Бизнес-кейсы</h2>
+      </div>
+      <div class="col-1">
+        <div class="slider-navigation__wrapper case__navigation">
+          <div class="slider-navigation slider-navigation_prev"></div>
+          <div class="slider-navigation slider-navigation_next"></div>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -214,9 +212,78 @@ script: main
           </ul>
         </div>
       </div>
-      <div class="col-10">
-        <ul class="case__list">
-          <li class="case__item">
+      <div class="col-10 swiper case__slider js-case-swiper">
+
+        <ul class="case__list swiper-wrapper">
+          <li class="case__item swiper-slide">
+            <div class="case__left">
+              <h3 class="case__heading">Инвестиционный ЗПИФ</h3>
+              <p class="case__description">Инвестирование в различные финансовые активы (ценные бумаги, доли ООО),
+                кредитование различных структур, участие в&nbsp;стартапах.</p>
+              <a href="" class="case__btn btn btn-reset">Читать дальше</a>
+            </div>
+            <div class="case__right">
+              <img src="assets/img/case-01.png" alt="" class="case__img">
+              <p class="case__caption">
+                Инвестиционный ЗПИФ
+                <svg class="">
+                  <use xlink:href="assets/img/sprite.svg#arrow-right-2"></use>
+                </svg>
+              </p>
+            </div>
+          </li>
+          <li class="case__item swiper-slide">
+            <div class="case__left">
+              <h3 class="case__heading">Инвестиционный ЗПИФ</h3>
+              <p class="case__description">Инвестирование в различные финансовые активы (ценные бумаги, доли ООО),
+                кредитование различных структур, участие в&nbsp;стартапах.</p>
+              <a href="" class="case__btn btn btn-reset">Читать дальше</a>
+            </div>
+            <div class="case__right">
+              <img src="assets/img/case-01.png" alt="" class="case__img">
+              <p class="case__caption">
+                Инвестиционный ЗПИФ
+                <svg class="">
+                  <use xlink:href="assets/img/sprite.svg#arrow-right-2"></use>
+                </svg>
+              </p>
+            </div>
+          </li>
+          <li class="case__item swiper-slide">
+            <div class="case__left">
+              <h3 class="case__heading">Инвестиционный ЗПИФ</h3>
+              <p class="case__description">Инвестирование в различные финансовые активы (ценные бумаги, доли ООО),
+                кредитование различных структур, участие в&nbsp;стартапах.</p>
+              <a href="" class="case__btn btn btn-reset">Читать дальше</a>
+            </div>
+            <div class="case__right">
+              <img src="assets/img/case-01.png" alt="" class="case__img">
+              <p class="case__caption">
+                Инвестиционный ЗПИФ
+                <svg class="">
+                  <use xlink:href="assets/img/sprite.svg#arrow-right-2"></use>
+                </svg>
+              </p>
+            </div>
+          </li>
+          <li class="case__item swiper-slide">
+            <div class="case__left">
+              <h3 class="case__heading">Инвестиционный ЗПИФ</h3>
+              <p class="case__description">Инвестирование в различные финансовые активы (ценные бумаги, доли ООО),
+                кредитование различных структур, участие в&nbsp;стартапах.</p>
+              <a href="" class="case__btn btn btn-reset">Читать дальше</a>
+            </div>
+            <div class="case__right">
+              <img src="assets/img/case-01.png" alt="" class="case__img">
+              <p class="case__caption">
+                Инвестиционный ЗПИФ
+                <svg class="">
+                  <use xlink:href="assets/img/sprite.svg#arrow-right-2"></use>
+                </svg>
+              </p>
+            </div>
+          </li>
+          <li class="case__item swiper-slide">
             <div class="case__left">
               <h3 class="case__heading">Инвестиционный ЗПИФ</h3>
               <p class="case__description">Инвестирование в различные финансовые активы (ценные бумаги, доли ООО),
@@ -234,6 +301,7 @@ script: main
             </div>
           </li>
         </ul>
+        <div class="slider-pagination case__pagination"></div>
       </div>
     </div>
   </div>
@@ -506,6 +574,44 @@ script: main
               <span class="pagination__dot"></span>
             </li>
           </ul>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="map">
+          <div class="map__dot map__dot_spb map__round map__round_black">
+            <div class="map__round map__round_green">
+              <div class="map__round map__round_white"></div>
+            </div>
+          </div>
+          <div class="map__dot map__dot_msk map__round map__round_black">
+            <div class="map__round map__round_green">
+              <div class="map__round map__round_white"></div>
+            </div>
+          </div>
+          <div class="map__dot map__dot_nsk map__round map__round_black">
+            <div class="map__round map__round_green">
+              <div class="map__round map__round_white"></div>
+            </div>
+          </div>
+          <div class="map__dot map__dot_nn map__round map__round_black">
+            <div class="map__round map__round_green">
+              <div class="map__round map__round_white"></div>
+            </div>
+          </div>
+
+          <div class="map__info">
+            <img src="assets/img/map-logo.png" alt="" class="map__logo">
+            <p class="map__address"><span class="map__city">Новосибирск,</span>
+              ул. Мясниковой 30,
+              офис 11 </p>
+            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>
+            <a href="mailto:info@am-gamma.ru" class="map__email">
+              <svg>
+                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
+              </svg>
+              info@am-gamma.ru
+            </a>
+          </div>
         </div>
       </div>
     </div>

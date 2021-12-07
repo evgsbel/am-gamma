@@ -17,12 +17,19 @@
 </head>
 
 <body class="is-{{page}}-page">
+    {{> sidebar}}
+    {{> hide-menu}}
     {{> header}}
     <main role="main" class="main">
         {{> body}}
     </main>
     <div class="js-stop-header"></div>
     {{> footer}}
+    <button class="btn-reset to-top js-to-top">
+      <svg>
+        <use xlink:href="assets/img/sprite.svg#to-top"></use>
+      </svg>
+    </button>
     {{> scripts}}
 </body>
 

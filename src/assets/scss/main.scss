@@ -32,16 +32,18 @@
 @import
   'layout/header',
   'layout/nav',
+  'layout/sidebar',
   'layout/logo',
+  'layout/hide-menu',
   'layout/footer';
 
 // 5. Components
 @import
   'components/button',
-  'components/list',
-  'components/table',
   'components/pagination',
-  'components/social';
+  'components/slider-tools',
+  'components/to-top',
+  'components/burger';
 
 
 // 6. Page-specific styles

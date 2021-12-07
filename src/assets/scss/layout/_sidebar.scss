@@ -1,0 +1,15 @@
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 80px;
+  border-right: 1px solid #e5e5e5;
+  height: 100%;
+  &__arrow {
+    display: block;
+    margin: 70vh auto 0;
+    width: 8px;
+    height: 101px;
+  }
+}

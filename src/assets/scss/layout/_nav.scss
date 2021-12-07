@@ -1,3 +1,51 @@
+.hover-menu {
+  position: absolute;
+  left: 0;
+  top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+  width: 345px;
+  background-color: $white;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  opacity: 0;
+  z-index: -1;
+  transform: translateY(-500%);
+  transition: opacity .3s ease-in-out;
+  &__link {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.94em;
+    line-height: 2;
+    color: #475256;
+    width: 100%;
+    svg {
+      margin-left: auto;
+      width: 20px;
+      height: 8px;
+      opacity: 0.2;
+      transition: opacity .3s ease-in-out;
+    }
+  }
+  &__item {
+    padding: 10px 20px;
+    width: 100%;
+    transition: background-color .3s ease-in-out;
+    &:hover {
+      background-color: $green;
+      .hover-menu__link {
+        color: $white;
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
 .nav {
   &__list {
     display: flex;
@@ -7,6 +55,8 @@
   }
   &__item {
     position: relative;
+    padding-bottom: 30px;
+    transform: translateY(30px);
     &:not(:last-child) {
       margin-right: 71px;
     }
@@ -14,15 +64,25 @@
       &::after {
         content: '';
         position: absolute;
-        top: 50%;
+        top: 26%;
         right: -20px;
         display: block;
         width: 10px;
         height: 3px;
         background-image: url("data:image/svg+xml,%3Csvg width='10' height='3' viewBox='0 0 10 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 3L0 0H10L5 3Z' fill='%23A7CF43'/%3E%3C/svg%3E%0A");
         background-repeat: no-repeat;
-        transform: translateY(-10%);
+        transform: translateY(-30%);
       }
+    }
+    &:hover {
+     .nav__link {
+       color: $green;
+     }
+     .hover-menu {
+       transform: translateY(0);
+       opacity: 1;
+       z-index: 1;
+     }
     }
   }
   &__link {
@@ -30,5 +90,8 @@
     font-size: 0.9em;
     line-height: 1.2;
     text-transform: uppercase;
+    transition: color .3s ease-in-out;
   }
 }
+
+

@@ -22,7 +22,7 @@
   }
   &__btn {
     margin-bottom: 235px;
-    @include btnPadding(17,74,21)
+    @include btnPadding(17, 74, 21)
   }
   &__link {
     display: block;
@@ -146,7 +146,7 @@
     line-height: 1.5;
   }
   &__btn {
-    @include btnPadding(17,44,21)
+    @include btnPadding(17, 44, 21)
   }
   &__right {
     flex: 0 0 60.1%;
@@ -173,6 +173,16 @@
       height: 8px;
       transition: transform .3s ease-in-out;
     }
+  }
+  &__slider {
+    padding: 40px 60px 70px 0;
+    margin: -40px 0 -70px 35px;
+  }
+  &__pagination {
+    margin-top: -20px;
+  }
+  &__navigation {
+    margin-left: auto;
   }
 }
 
@@ -224,6 +234,9 @@
     height: 8px;
     transition: transform .3s ease-in-out;
   }
+  &__link:hover .news__arrow {
+    transform: scaleX(1.5);
+  }
   &__right {
     margin-left: 35px;
   }
@@ -232,7 +245,7 @@
 .active-news {
   position: relative;
   padding: 20px 20px 25px;
-  background-color: rgba(255,255,255,0.95);
+  background-color: rgba(255, 255, 255, 0.95);
   border: 1px solid #e5e5e5;
   border-radius: 10px;
   &__caption {
@@ -300,6 +313,119 @@
 .contacts {
   padding-top: 100px;
   padding-bottom: 100px;
+  &__title {
+    margin-bottom: 2em;
+  }
+}
+
+.map {
+  position: relative;
+  height: 540px; /* temp */
+  background-image: url('../img/map-bg.png');
+  background-repeat: no-repeat;
+  &__dot {
+    position: absolute;
+    &_spb {
+      top: 42%;
+      left: 5%;
+      &::after {
+        width: 50px;
+      }
+    }
+    &_msk {
+      top: 66%;
+      left: 15.5%;
+    }
+    &_nsk {
+      top: 63%;
+      left: 24%;
+    }
+    &_nn {
+      top: 70%;
+      left: 76.5%;
+    }
+  }
+  &__round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    &_black {
+      width: 31px;
+      height: 31px;
+      background-color: rgba(71, 82, 86, 0.7);
+    }
+    &_green {
+      width: 17px;
+      height: 17px;
+      background-color: $green;
+    }
+    &_white {
+      width: 7px;
+      height: 7px;
+      background-color: $white;
+    }
+  }
+  &__info {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 21px;
+    padding-right: 41px;
+    text-align: right;
+    width: 310px;
+    height: 180px;
+    background-image: url('../img/map-info-img.png');
+    background-repeat: no-repeat;
+    background-color: $white;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transform: translateY(-50%);
+    outline: 1px solid $white;
+    outline-offset: 6px;
+  }
+  &__logo {
+    position: absolute;
+    top: 17px;
+    left: 35px;
+    display: block;
+    width: 40px;
+    height: 41px;
+  }
+  &__address {
+    margin-bottom: 2em;
+    margin-left: auto;
+    max-width: 148px;
+    line-height: 1.19;
+  }
+  &__city {
+    display: block;
+    font-weight: 700;
+  }
+  &__phone {
+    margin-bottom: 10px;
+    margin-left: auto;
+    font-weight: 700;
+    font-size: 1.5em;
+    line-height: 1.2;
+    color: $green;
+  }
+  &__email {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0.75em;
+    line-height: 1.17;
+    svg {
+      margin-right: 7px;
+      width: 12px;
+      height: 14px;
+      color: $green;
+    }
+  }
 }
 
 // bottom nav
