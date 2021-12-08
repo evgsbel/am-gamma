@@ -1,11 +1,11 @@
 .burger {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 6px;
-  width: 100%;
+  width: 50px;
   color: #475256;
   transition: color .3s cubic-bezier(.25, .46, .45, .94);
   &__wr {
@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 214px;
+    height: 186px;
     border-bottom: 1px solid #e5e5e5;
   }
   &__line {

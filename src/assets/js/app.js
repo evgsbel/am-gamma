@@ -45,7 +45,7 @@ const openSubMenu = () => {
       panelHeading.forEach(panelHeading => {
         panelHeading.classList.remove('is-active')
       })
-      let target = event.target;
+      // let target = event.target;
       elem.classList.add('is-active')
 
     });
@@ -56,11 +56,11 @@ openSubMenu();
 
 // case slider
 
-let sliderParent = document.getElementsByClassName("case");
+let sliderCaseParent = document.getElementsByClassName("case");
 
-for(let i = 0; i < sliderParent.length; i++) {
+for(let i = 0; i < sliderCaseParent.length; i++) {
 
-  let el = sliderParent[i];
+  let el = sliderCaseParent[i];
 
   let swiper = el.getElementsByClassName("js-case-swiper")[0];
   let nx = el.getElementsByClassName("slider-navigation_next")[0];
@@ -70,7 +70,6 @@ for(let i = 0; i < sliderParent.length; i++) {
     speed: 1000,
     spaceBetween: 75,
     loop: true,
-    grabCursor: true,
     // If we need pagination
     pagination: {
       el: '.slider-pagination',
@@ -82,6 +81,129 @@ for(let i = 0; i < sliderParent.length; i++) {
     }
   });
 }
+
+
+// open why section item
+
+const openItem = () => {
+
+  const item = document.querySelectorAll('.js-open-item')
+    item.forEach((elem) => {
+    elem.addEventListener('click', (event) => {
+     elem.nextElementSibling.classList.add('is-active')
+      })
+    });
+
+  const closeItem = document.querySelectorAll('.why__close')
+  closeItem.forEach((cl) => {
+    cl.addEventListener('click', (event) => {
+      cl.parentElement.classList.remove('is-active')
+    })
+  });
+};
+
+openItem();
+
+// swipers news
+
+let sliderNewsParent = document.getElementsByClassName("news");
+
+for(let i = 0; i < sliderNewsParent.length; i++) {
+
+  let el = sliderNewsParent[i];
+
+  let swiperNewsLeft = el.getElementsByClassName("js-news-slider-left")[0];
+  let nx = el.getElementsByClassName("slider-navigation_next")[0];
+  let pr = el.getElementsByClassName("slider-navigation_prev")[0];
+  let pg = el.getElementsByClassName("slider-pagination")[0];
+
+  new Swiper (swiperNewsLeft, {
+    direction: "vertical",
+    speed: 800,
+    loop: true,
+    pagination: {
+      el: pg,
+      clickable: true,
+    },
+    navigation: {
+      nextEl: nx,
+      prevEl: pr
+    }
+  });
+}
+
+for(let i = 0; i < sliderNewsParent.length; i++) {
+
+  let el = sliderNewsParent[i];
+
+  let swiperNewsRight = el.getElementsByClassName("js-news-slider-right")[0];
+  let nx = el.getElementsByClassName("slider-navigation_next")[0];
+  let pr = el.getElementsByClassName("slider-navigation_prev")[0];
+  let pg = el.getElementsByClassName("slider-pagination")[0];
+
+  new Swiper (swiperNewsRight, {
+    direction: "vertical",
+    speed: 800,
+    spaceBetween: 20,
+    slidesPerView: 3,
+    loop: true,
+    pagination: {
+      el: pg,
+      clickable: true,
+    },
+    navigation: {
+      nextEl: nx,
+      prevEl: pr
+    }
+  });
+}
+
+
+// control slider
+
+var swiper = new Swiper(".js-control-swiper", {
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 1.5,
+  initialSlide: 1,
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: ["-120%", 0, -500]
+    },
+    next: {
+      shadow: true,
+      translate: ["120%", 0, -500]
+    }
+  }
+});
+
+// tabs
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tabsBtn = document.querySelectorAll('.tabs__btn');
+  tabsBtn.forEach(function (el) {
+    el.addEventListener('click', function (event) {
+
+      tabsBtn.forEach(tabsBtn => {
+        tabsBtn.classList.remove('is-active');
+      });
+
+      const path = event.currentTarget.dataset.path;
+
+      document.querySelectorAll('.tabs__content').forEach(function (tabContent) {
+        tabContent.classList.remove('is-active');
+      });
+      document.querySelector(`[data-target="${path}"]`).classList.add('is-active');
+      el.classList.add('is-active');
+
+    });
+  });
+});
+
+
+
 
 
 

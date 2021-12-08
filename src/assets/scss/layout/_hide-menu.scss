@@ -1,5 +1,5 @@
 .hide-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 80;
@@ -28,6 +28,7 @@
       .hide-menu__link {
         color: $green;
         svg {
+          color: $green;
           transform: scaleX(1.5);
         }
       }
@@ -39,6 +40,7 @@
   }
   &__sub {
     svg {
+      color: $white;
       margin-left: 75px;
       width: 100px;
       height: 8px;
@@ -54,6 +56,7 @@
     &:hover {
       color: $green;
       svg {
+        color: $green;
         transform: scaleX(1.5);
       }
     }
