@@ -6,10 +6,16 @@
   width: 80px;
   border-right: 1px solid #e5e5e5;
   height: calc(100% - 40px);
+  @include r(1024) {
+    border: none;
+  }
   &__arrow {
     display: block;
-    margin: 70vh auto 0;
+    margin: 50vh auto 0;
     width: 8px;
     height: 101px;
+    @include r(1024) {
+      margin-top: 40vh;
+    }
   }
 }

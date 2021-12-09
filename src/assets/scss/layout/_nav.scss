@@ -47,6 +47,9 @@
 }
 
 .nav {
+  @include r(1024) {
+    display: none;
+  }
   &__list {
     display: flex;
     align-items: center;
@@ -59,6 +62,9 @@
     transform: translateY(30px);
     &:not(:last-child) {
       margin-right: 71px;
+      @include r(1440) {
+        margin-right: 50px;
+      }
     }
     &.sub {
       &::after {
@@ -91,6 +97,9 @@
     line-height: 1.2;
     text-transform: uppercase;
     transition: color .3s ease-in-out;
+    @include r(1200) {
+      font-size: 0.8em;
+    }
   }
 }
 

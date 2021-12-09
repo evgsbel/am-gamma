@@ -15,6 +15,10 @@
     align-items: center;
     height: 186px;
     border-bottom: 1px solid #e5e5e5;
+    @include r(1024) {
+      border: none;
+      height: 150px;
+    }
   }
   &__line {
     width: 50px;

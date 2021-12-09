@@ -55,10 +55,10 @@ var sliderCaseParent = document.getElementsByClassName("case");
 
 for (var i = 0; i < sliderCaseParent.length; i++) {
   var el = sliderCaseParent[i];
-  var _swiper = el.getElementsByClassName("js-case-swiper")[0];
+  var swiper = el.getElementsByClassName("js-case-swiper")[0];
   var nx = el.getElementsByClassName("slider-navigation_next")[0];
   var pr = el.getElementsByClassName("slider-navigation_prev")[0];
-  new Swiper(_swiper, {
+  new Swiper(swiper, {
     speed: 1000,
     spaceBetween: 75,
     loop: true,
@@ -149,23 +149,94 @@ for (var _i2 = 0; _i2 < sliderNewsParent.length; _i2++) {
 } // control slider
 
 
-var swiper = new Swiper(".js-control-swiper", {
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: 1.5,
-  initialSlide: 1,
-  effect: "creative",
-  creativeEffect: {
-    prev: {
-      shadow: true,
-      translate: ["-120%", 0, -500]
+var sliderControlParent = document.getElementsByClassName("control");
+
+for (var _i3 = 0; _i3 < sliderControlParent.length; _i3++) {
+  var _el3 = sliderControlParent[_i3];
+
+  var sliderControlTop = _el3.getElementsByClassName("js-control-slider--top")[0];
+
+  var _nx3 = _el3.getElementsByClassName("slider-navigation_next")[0];
+
+  var _pr3 = _el3.getElementsByClassName("slider-navigation_prev")[0];
+
+  new Swiper(sliderControlTop, {
+    speed: 300,
+    effect: 'coverflow',
+    // sets the effect to coverflow
+    grabCursor: true,
+    // sets grab cursor as the hover cursor over the slides
+    centeredSlides: true,
+    // used to center the active slide
+    spaceBetween: 0,
+    // distance between slides in px
+    initialSlide: 0,
+    slidesPerView: 3,
+    // number of slides per view
+    loop: true,
+    // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    coverflowEffect: {
+      rotate: 0,
+      // slide rotation degree
+      stretch: 150,
+      // stretches the space between the slides in px
+      depth: 200,
+      // offsets the depth of neighboring slides
+      modifier: 1,
+      // effect multiplier
+      slideShadows: false // disables the shadow around the slide container
+
     },
-    next: {
-      shadow: true,
-      translate: ["120%", 0, -500]
+    navigation: {
+      nextEl: _nx3,
+      prevEl: _pr3
     }
-  }
-}); // tabs
+  });
+}
+
+for (var _i4 = 0; _i4 < sliderControlParent.length; _i4++) {
+  var _el4 = sliderControlParent[_i4];
+
+  var sliderControlBottom = _el4.getElementsByClassName("js-control-slider--bottom")[0];
+
+  var _nx4 = _el4.getElementsByClassName("slider-navigation_next")[0];
+
+  var _pr4 = _el4.getElementsByClassName("slider-navigation_prev")[0];
+
+  new Swiper(sliderControlBottom, {
+    speed: 300,
+    effect: 'coverflow',
+    // sets the effect to coverflow
+    grabCursor: true,
+    // sets grab cursor as the hover cursor over the slides
+    centeredSlides: true,
+    // used to center the active slide
+    spaceBetween: 0,
+    // distance between slides in px
+    initialSlide: 0,
+    slidesPerView: 3,
+    // number of slides per view
+    loop: true,
+    // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    coverflowEffect: {
+      rotate: 0,
+      // slide rotation degree
+      stretch: 150,
+      // stretches the space between the slides in px
+      depth: 200,
+      // offsets the depth of neighboring slides
+      modifier: 1,
+      // effect multiplier
+      slideShadows: false // disables the shadow around the slide container
+
+    },
+    navigation: {
+      nextEl: _nx4,
+      prevEl: _pr4
+    }
+  });
+} // tabs
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var tabsBtn = document.querySelectorAll('.tabs__btn');

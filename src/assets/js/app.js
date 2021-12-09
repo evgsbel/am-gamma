@@ -1,6 +1,6 @@
 //back to top
 
-$(window).scroll(function() {
+$(window).scroll(function () {
   var height = $(window).scrollTop();
   if (height > 100) {
     $('.js-to-top').fadeIn();
@@ -8,10 +8,10 @@ $(window).scroll(function() {
     $('.js-to-top').fadeOut();
   }
 });
-$(document).ready(function() {
-  $(".js-to-top").click(function(event) {
+$(document).ready(function () {
+  $(".js-to-top").click(function (event) {
     event.preventDefault();
-    $("html, body").animate({ scrollTop: 0 }, "slow");
+    $("html, body").animate({scrollTop: 0}, "slow");
     return false;
   });
 
@@ -58,7 +58,7 @@ openSubMenu();
 
 let sliderCaseParent = document.getElementsByClassName("case");
 
-for(let i = 0; i < sliderCaseParent.length; i++) {
+for (let i = 0; i < sliderCaseParent.length; i++) {
 
   let el = sliderCaseParent[i];
 
@@ -66,7 +66,7 @@ for(let i = 0; i < sliderCaseParent.length; i++) {
   let nx = el.getElementsByClassName("slider-navigation_next")[0];
   let pr = el.getElementsByClassName("slider-navigation_prev")[0];
 
-  new Swiper (swiper, {
+  new Swiper(swiper, {
     speed: 1000,
     spaceBetween: 75,
     loop: true,
@@ -88,11 +88,11 @@ for(let i = 0; i < sliderCaseParent.length; i++) {
 const openItem = () => {
 
   const item = document.querySelectorAll('.js-open-item')
-    item.forEach((elem) => {
+  item.forEach((elem) => {
     elem.addEventListener('click', (event) => {
-     elem.nextElementSibling.classList.add('is-active')
-      })
-    });
+      elem.nextElementSibling.classList.add('is-active')
+    })
+  });
 
   const closeItem = document.querySelectorAll('.why__close')
   closeItem.forEach((cl) => {
@@ -108,7 +108,7 @@ openItem();
 
 let sliderNewsParent = document.getElementsByClassName("news");
 
-for(let i = 0; i < sliderNewsParent.length; i++) {
+for (let i = 0; i < sliderNewsParent.length; i++) {
 
   let el = sliderNewsParent[i];
 
@@ -117,7 +117,7 @@ for(let i = 0; i < sliderNewsParent.length; i++) {
   let pr = el.getElementsByClassName("slider-navigation_prev")[0];
   let pg = el.getElementsByClassName("slider-pagination")[0];
 
-  new Swiper (swiperNewsLeft, {
+  new Swiper(swiperNewsLeft, {
     direction: "vertical",
     speed: 800,
     loop: true,
@@ -132,7 +132,7 @@ for(let i = 0; i < sliderNewsParent.length; i++) {
   });
 }
 
-for(let i = 0; i < sliderNewsParent.length; i++) {
+for (let i = 0; i < sliderNewsParent.length; i++) {
 
   let el = sliderNewsParent[i];
 
@@ -141,7 +141,7 @@ for(let i = 0; i < sliderNewsParent.length; i++) {
   let pr = el.getElementsByClassName("slider-navigation_prev")[0];
   let pg = el.getElementsByClassName("slider-pagination")[0];
 
-  new Swiper (swiperNewsRight, {
+  new Swiper(swiperNewsRight, {
     direction: "vertical",
     speed: 800,
     spaceBetween: 20,
@@ -161,23 +161,69 @@ for(let i = 0; i < sliderNewsParent.length; i++) {
 
 // control slider
 
-var swiper = new Swiper(".js-control-swiper", {
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: 1.5,
-  initialSlide: 1,
-  effect: "creative",
-  creativeEffect: {
-    prev: {
-      shadow: true,
-      translate: ["-120%", 0, -500]
+let sliderControlParent = document.getElementsByClassName("control");
+
+for (let i = 0; i < sliderControlParent.length; i++) {
+
+  let el = sliderControlParent[i];
+
+  let sliderControlTop = el.getElementsByClassName("js-control-slider--top")[0];
+  let nx = el.getElementsByClassName("slider-navigation_next")[0];
+  let pr = el.getElementsByClassName("slider-navigation_prev")[0];
+
+  new Swiper(sliderControlTop, {
+    speed: 300,
+    effect: 'coverflow', // sets the effect to coverflow
+    grabCursor: true, // sets grab cursor as the hover cursor over the slides
+    centeredSlides: true, // used to center the active slide
+    spaceBetween: 0,// distance between slides in px
+    initialSlide: 0,
+    slidesPerView: 3, // number of slides per view
+    loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    coverflowEffect: {
+      rotate: 0, // slide rotation degree
+      stretch: 150, // stretches the space between the slides in px
+      depth: 200, // offsets the depth of neighboring slides
+      modifier: 1, // effect multiplier
+      slideShadows: false, // disables the shadow around the slide container
     },
-    next: {
-      shadow: true,
-      translate: ["120%", 0, -500]
+    navigation: {
+      nextEl: nx,
+      prevEl: pr
     }
-  }
-});
+  });
+}
+
+for (let i = 0; i < sliderControlParent.length; i++) {
+
+  let el = sliderControlParent[i];
+
+  let sliderControlBottom = el.getElementsByClassName("js-control-slider--bottom")[0];
+  let nx = el.getElementsByClassName("slider-navigation_next")[0];
+  let pr = el.getElementsByClassName("slider-navigation_prev")[0];
+
+  new Swiper(sliderControlBottom, {
+    speed: 300,
+    effect: 'coverflow', // sets the effect to coverflow
+    grabCursor: true, // sets grab cursor as the hover cursor over the slides
+    centeredSlides: true, // used to center the active slide
+    spaceBetween: 0,// distance between slides in px
+    initialSlide: 0,
+    slidesPerView: 3, // number of slides per view
+    loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    coverflowEffect: {
+      rotate: 0, // slide rotation degree
+      stretch: 150, // stretches the space between the slides in px
+      depth: 200, // offsets the depth of neighboring slides
+      modifier: 1, // effect multiplier
+      slideShadows: false, // disables the shadow around the slide container
+    },
+    navigation: {
+      nextEl: nx,
+      prevEl: pr
+    }
+  });
+}
 
 // tabs
 
@@ -201,9 +247,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-
-
-
-
 
 

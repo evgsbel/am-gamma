@@ -9,6 +9,9 @@
   background-repeat: no-repeat;
   background-position: right center;
   background-size: cover;
+  @include r(1200) {
+    padding-top: 150px;
+  }
   &__title {
     margin-bottom: 82px;
     max-width: 750px;
@@ -22,7 +25,10 @@
   }
   &__btn {
     margin-bottom: 235px;
-    @include btnPadding(17, 74, 21)
+    @include btnPadding(17, 74, 21);
+    @include r(1024) {
+      margin-bottom: 40px;
+    }
   }
   &__link {
     display: block;
@@ -39,8 +45,14 @@
 
 .why {
   padding-bottom: 171px;
+  @include r(1024) {
+    padding-bottom: 80px;
+  }
   &.about-number {
     padding-top: 100px;
+    @include r(1024) {
+      padding-bottom: 80px;
+    }
   }
   &__title {
     margin-bottom: 2em;
@@ -49,6 +61,9 @@
     position: relative;
     display: flex;
     gap: 50px;
+    @include r(1200) {
+     gap: 25px;
+    }
   }
   &__arrow {
     display: block;
@@ -104,6 +119,9 @@
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     cursor: pointer;
+    @include r(1200) {
+      flex-basis: calc((100% - 2 * 25px) / 3);
+    }
     img {
       border-top-left-radius: 10px;
     }
@@ -123,6 +141,9 @@
     font-size: 1.25em;
     line-height: 1.2;
     cursor: pointer;
+    @include r(1200) {
+      font-size: 1em;
+    }
   }
   &__plus {
     margin-right: 9px;
@@ -161,6 +182,9 @@
   background-repeat: no-repeat;
   background-position: 30% center;
   background-color: #fbfbfb;
+  @include r(1024) {
+    padding: 80px 0;
+  }
   &__title {
     margin-bottom: 45px;
   }
@@ -179,6 +203,9 @@
   background: -webkit-linear-gradient(90deg, rgb(255, 255, 255) 50%, rgb(245, 245, 245) 50%);
   background: -moz-linear-gradient(90deg, rgb(255, 255, 255) 50%, rgb(245, 245, 245) 50%);
   background: linear-gradient(90deg, rgb(255, 255, 255) 50%, rgb(245, 245, 245) 50%);
+  @include r(1024) {
+    padding: 80px 0;
+  }
   &__title {
     margin-bottom: 2em;
   }
@@ -264,22 +291,89 @@
 // control section
 
 .control {
-  height: 855px; /* temp */
   padding-top: 100px;
   padding-bottom: 100px;
   background-image: url('../img/control-bg.png'), url('../img/control-bg-left.png');
   background-repeat: no-repeat;
   background-position: 80% 90px, left bottom;
+  @include r(1024) {
+    padding: 80px 0;
+  }
   &__title {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__left {
+    max-width: 100%;
+  }
+  &__list {
+    position: relative;
+    display: flex;
   }
   &__item {
-    padding: 20px;
-    width: 365px;
-    height: 257px;
+    //position: absolute;
+    padding: 20px 20px 25px 31px;
+
     background: $white;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+      .control__arrow {
+        width: 40px;
+        svg {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  &__icon {
+    display: block;
+    margin-left: auto;
+  }
+  &__for {
+    font-weight: 300;
+    font-size: 0.75em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #475256;
+    max-width: 172px;
+  }
+  &__caption {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.1875em;
+    line-height: 1.5;
+    span {
+      display: block;
+      color: $green;
+    }
+  }
+  &__descr {
+    margin-bottom: 2em;
+    font-weight: 300;
+    font-size: 0.75em;
+    line-height: 0.875;
+  }
+  &__arrow {
+    display: block;
+    margin-left: auto;
+    width: 20px;
+    overflow: hidden;
+    transition: width .3s ease-in-out;
+    svg {
+      width: 40px;
+      height: 8px;
+      transform: translateX(-20px);
+      transition: transform .3s ease-in-out;
+    }
+  }
+  &__swiper {
+    margin: -50px 0px;
+    padding: 50px 0px;
+
   }
 }
 
@@ -292,6 +386,9 @@
   background-image: url('../img/news-bg.png');
   background-repeat: no-repeat;
   background-position: 40% bottom;
+  @include r(1024) {
+    padding: 80px 0;
+  }
   &__title {
     margin-bottom: 60px;
   }
@@ -391,6 +488,10 @@
     border-radius: 10px;
     width: 80px;
     height: 80px;
+    @include r(1200) {
+      width: 40px;
+      height: 40px;
+    }
   }
   &__slider {
     max-height: 450px;
@@ -427,6 +528,9 @@
 .contacts {
   padding-top: 100px;
   padding-bottom: 100px;
+  @include r(1024) {
+    padding: 80px 0;
+  }
   &__title {
     margin-bottom: 2em;
   }
@@ -437,6 +541,7 @@
   height: 540px; /* temp */
   background-image: url('../img/map-bg.png');
   background-repeat: no-repeat;
+  background-size: cover;
   &__dot {
     position: absolute;
     &::before {
@@ -593,6 +698,9 @@
   position: relative;
   z-index: 20;
   padding-bottom: 120px;
+  @include r(1024) {
+    display: none;
+  }
   .hover-menu {
     transform: translateX(-500%) translateY(0);
   }

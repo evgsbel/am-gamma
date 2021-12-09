@@ -80,19 +80,19 @@ $max-content: max-content;
 // Grid breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 601px,
-  md: 769px,
+  sm: 768px,
+  md: 1025px,
   lg: 1201px,
   xl: 1441px,
-  xxl: 1920px,
+  xxl: 1600px,
 
 );
 
 // Grid containers
 $container-max-widths: (
   sm: 100%,
-  md: 100%,
-  lg: 100%,
-  xl: 100%,
+  md: 992px,
+  lg: 1170px,
+  xl: 1400px,
   xxl: 1450px,
 );
