@@ -1,6 +1,9 @@
 .pagination {
   width: 100%;
   height: 100%;
+  @include r(768) {
+    display: none;
+  }
   &__list {
     width: 100%;
     height: 100%;

@@ -11,6 +11,9 @@
   height: 100vh;
   transform: translateX(-100%);
   transition: transform .7s cubic-bezier(.25, .46, .45, .94);
+  @include r(1600) {
+    padding-top: 30px;
+  }
   &.is-open {
     transform: translateX(0);
   }
@@ -24,6 +27,16 @@
   }
   &__item {
     width: max-content;
+    transition: max-height .3s ease-in-out;
+    @include r(1200) {
+      position: relative;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    @include r(576) {
+      margin-bottom: 15px;
+      z-index: 200;
+    }
     &.is-active {
       .hide-menu__link {
         color: $green;
@@ -35,6 +48,7 @@
       & > .sub-menu {
         opacity: 1;
         transform: translateX(0);
+        max-height: 100%;
       }
     }
   }
@@ -53,6 +67,18 @@
     line-height: 1.7;
     color: $white;
     transition: color .4s ease-in-out;
+    @include r(1440) {
+      font-size: 3.5em;
+    }
+    @include r(1200) {
+      font-size: 2.8em;
+    }
+    @include r(576) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 1.8em;
+    }
     &:hover {
       color: $green;
       svg {
@@ -76,7 +102,18 @@
   width: 250px;
   transform: translateX(50%);
   opacity: 0;
-  transition: opacity .4s cubic-bezier(.25, .46, .45, .94), transform .3s ease-in-out;
+  transition: opacity .4s cubic-bezier(.25, .46, .45, .94), transform .3s ease-in-out, max-height .3s ease-in-out;
+  @include r(1200) {
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+  @include r(576) {
+    flex-direction: column;
+    max-height: 0;
+  }
   &__link {
     font-weight: 700;
     font-size: 1.25em;

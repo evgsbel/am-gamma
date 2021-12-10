@@ -20,6 +20,12 @@
       height: 1px;
       background-color: $green;
       transform: translateY(-50%);
+      @include r(576) {
+        width: 60%;
+      }
+      @include r(480) {
+        width: 30%;
+      }
     }
   }
   &__info {
@@ -29,6 +35,16 @@
   &__contact {
     display: flex;
     gap: 50px;
+    @include r(1024) {
+      flex-direction: column;
+      gap: 0;
+    }
+    @include r(768) {
+      flex-direction: row;
+    }
+    @include r(480) {
+      flex-direction: column;
+    }
   }
   &__contacts {
     font-weight: 300;
@@ -40,9 +56,25 @@
       font-weight: 700;
     }
   }
+  &__list {
+    @include r(1024) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
   &__item {
+    @include r(1024) {
+      flex: 0 0 48%;
+    }
+    @include r(768) {
+      flex: 1 0 100%;
+    }
     &:not(:last-child) {
       margin-bottom: 35px;
+      @include r(768) {
+        margin-bottom: 15px;
+      }
     }
   }
   &__link {

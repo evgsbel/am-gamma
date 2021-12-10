@@ -6,9 +6,16 @@
   width: 80px;
   border-right: 1px solid #e5e5e5;
   height: calc(100% - 40px);
+  &.opened-menu {
+    top: 0;
+  }
   @include r(1024) {
     border: none;
   }
+  @include r(768) {
+    width: 0;
+  }
+
   &__arrow {
     display: block;
     margin: 50vh auto 0;
@@ -16,6 +23,9 @@
     height: 101px;
     @include r(1024) {
       margin-top: 40vh;
+    }
+    @include r(768) {
+      margin-left: 15px;
     }
   }
 }

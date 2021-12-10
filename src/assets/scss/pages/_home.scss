@@ -15,6 +15,9 @@
   &__title {
     margin-bottom: 82px;
     max-width: 750px;
+    @include r(576) {
+      max-width: 100%;
+    }
   }
   &__subtitle {
     margin-bottom: 73px;
@@ -29,6 +32,14 @@
     @include r(1024) {
       margin-bottom: 40px;
     }
+    @include r(768) {
+      padding-right: 35px;
+      padding-left: 35px;
+    }
+    @include r(480) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
   }
   &__link {
     display: block;
@@ -38,6 +49,9 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     color: $black;
     width: max-content;
+    @include r(480) {
+      font-size: 1em;
+    }
   }
 }
 
@@ -64,6 +78,9 @@
     @include r(1200) {
      gap: 25px;
     }
+    @include r(768) {
+      flex-direction: column;
+    }
   }
   &__arrow {
     display: block;
@@ -84,6 +101,9 @@
     line-height: 1.875;
     max-width: 730px;
     opacity: 0;
+    @include r(768) {
+      padding-left: 20px;
+    }
   }
   &__hide {
     position: absolute;
@@ -98,13 +118,22 @@
     border-radius: 10px;
     opacity: 0;
     transition: all .5s cubic-bezier(.25, .46, .45, .94);
+    @include r(1024) {
+      height: max-content;
+    }
+    @include r(768) {
+      flex-wrap: wrap;
+    }
+    @include r(480) {
+      overflow: hidden;
+    }
     div {
       flex: 0 0 auto;
     }
     &.is-active {
       width: 100%;
       opacity: 1;
-      z-index: 10;
+      z-index: 20;
       .why__text {
         opacity: 1;
       }
@@ -121,6 +150,9 @@
     cursor: pointer;
     @include r(1200) {
       flex-basis: calc((100% - 2 * 25px) / 3);
+    }
+    @include r(768) {
+      position: relative;
     }
     img {
       border-top-left-radius: 10px;
@@ -191,6 +223,9 @@
   &__text {
     &:not(:last-child) {
       margin-bottom: 45px;
+      @include r(768) {
+        margin-bottom: 20px;
+      }
     }
   }
 }
@@ -206,15 +241,25 @@
   @include r(1024) {
     padding: 80px 0;
   }
+  @include r(768) {
+    background: rgb(245, 245, 245);
+  }
   &__title {
     margin-bottom: 2em;
   }
   &__item {
     display: flex;
     gap: 55px;
+    @include r(768) {
+      flex-wrap: wrap;
+    }
   }
   &__left {
     flex: 0 0 36.5%;
+    @include r(768) {
+      flex: 1 0 100%;
+      order: 1;
+    }
   }
   &__heading {
     color: $green;
@@ -239,6 +284,9 @@
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     cursor: pointer;
+    @include r(768) {
+      flex: 1 0 100%;
+    }
     &:hover {
       .case__caption svg {
         transform: translateX(0);
@@ -261,6 +309,9 @@
     font-size: 1.25em;
     line-height: 1.2;
     transition: color .4s ease-in-out;
+    @include r(480) {
+      flex-wrap: wrap;
+    }
   }
   &__arrow {
     display: block;
@@ -279,9 +330,20 @@
   &__slider {
     padding: 40px 60px 70px 0;
     margin: -40px 0 -70px 35px;
+    @include r(768) {
+      padding: 40px 60px 70px 32px;
+      margin: -40px 0 -70px 0px;
+    }
+    @include r(480) {
+      padding: 0;
+      margin: 0;
+    }
   }
   &__pagination {
     margin-top: -20px;
+    @include r(768) {
+      margin-top: 20px;
+    }
   }
   &__navigation {
     margin-left: auto;
@@ -373,7 +435,10 @@
   &__swiper {
     margin: -50px 0px;
     padding: 50px 0px;
-
+    @include r(480) {
+      padding: 0;
+      margin: 0;
+    }
   }
 }
 
@@ -441,6 +506,9 @@
   &__pagination {
     margin-top: 50px;
     justify-content: center;
+    @include r(576) {
+      margin-top: 0;
+    }
   }
 }
 
@@ -457,6 +525,9 @@
     font-size: 1.25em;
     line-height: 1.5;
     color: $green;
+    @include r(1024) {
+      max-width: 80%;
+    }
   }
   &__text {
     font-weight: 300;
@@ -496,15 +567,20 @@
   &__slider {
     max-height: 450px;
     overflow: hidden;
+    @include r(480) {
+      max-height: 600px;
+    }
   }
 }
 
 .news-list {
+  @include r(1024) {
+    display: none;
+  }
   &__item {
     padding-bottom: 22px;
     border-bottom: 1px solid #c4c4c4;
     box-sizing: border-box;
-
   }
   &__caption {
     margin-bottom: 10px;
@@ -530,6 +606,9 @@
   padding-bottom: 100px;
   @include r(1024) {
     padding: 80px 0;
+  }
+  @include r(375) {
+    display: none;
   }
   &__title {
     margin-bottom: 2em;

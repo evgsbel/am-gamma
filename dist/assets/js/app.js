@@ -76,16 +76,19 @@ for (var i = 0; i < sliderCaseParent.length; i++) {
 
 
 var openItem = function openItem() {
+  var overlay = document.querySelector('.overlay');
   var item = document.querySelectorAll('.js-open-item');
   item.forEach(function (elem) {
     elem.addEventListener('click', function (event) {
       elem.nextElementSibling.classList.add('is-active');
+      overlay.classList.add('is-active');
     });
   });
   var closeItem = document.querySelectorAll('.why__close');
   closeItem.forEach(function (cl) {
     cl.addEventListener('click', function (event) {
       cl.parentElement.classList.remove('is-active');
+      overlay.classList.remove('is-active');
     });
   });
 };
@@ -171,7 +174,6 @@ for (var _i3 = 0; _i3 < sliderControlParent.length; _i3++) {
     spaceBetween: 0,
     // distance between slides in px
     initialSlide: 0,
-    slidesPerView: 3,
     // number of slides per view
     loop: true,
     // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
@@ -190,6 +192,17 @@ for (var _i3 = 0; _i3 < sliderControlParent.length; _i3++) {
     navigation: {
       nextEl: _nx3,
       prevEl: _pr3
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.5
+      },
+      480: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      }
     }
   });
 }
@@ -214,8 +227,6 @@ for (var _i4 = 0; _i4 < sliderControlParent.length; _i4++) {
     spaceBetween: 0,
     // distance between slides in px
     initialSlide: 0,
-    slidesPerView: 3,
-    // number of slides per view
     loop: true,
     // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
@@ -233,6 +244,17 @@ for (var _i4 = 0; _i4 < sliderControlParent.length; _i4++) {
     navigation: {
       nextEl: _nx4,
       prevEl: _pr4
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.5
+      },
+      480: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 3
+      }
     }
   });
 } // tabs

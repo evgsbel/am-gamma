@@ -10,6 +10,14 @@
   height: 50px;
   border-radius: 50%;
   background-color: rgba(71,82,86,0.7);
+  @include r(768) {
+    right: 100%;
+    left: 15px;
+  }
+  @include r(576) {
+    opacity: 0;
+    visibility: hidden;
+  }
   svg {
     width: 12px;
     height: 7px;

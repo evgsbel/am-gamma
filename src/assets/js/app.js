@@ -86,11 +86,12 @@ for (let i = 0; i < sliderCaseParent.length; i++) {
 // open why section item
 
 const openItem = () => {
-
+const overlay = document.querySelector('.overlay')
   const item = document.querySelectorAll('.js-open-item')
   item.forEach((elem) => {
     elem.addEventListener('click', (event) => {
-      elem.nextElementSibling.classList.add('is-active')
+      elem.nextElementSibling.classList.add('is-active');
+      overlay.classList.add('is-active')
     })
   });
 
@@ -98,6 +99,7 @@ const openItem = () => {
   closeItem.forEach((cl) => {
     cl.addEventListener('click', (event) => {
       cl.parentElement.classList.remove('is-active')
+      overlay.classList.remove('is-active')
     })
   });
 };
@@ -178,7 +180,7 @@ for (let i = 0; i < sliderControlParent.length; i++) {
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
     initialSlide: 0,
-    slidesPerView: 3, // number of slides per view
+     // number of slides per view
     loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
@@ -190,6 +192,17 @@ for (let i = 0; i < sliderControlParent.length; i++) {
     navigation: {
       nextEl: nx,
       prevEl: pr
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.5,
+      },
+      480: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      }
     }
   });
 }
@@ -209,7 +222,7 @@ for (let i = 0; i < sliderControlParent.length; i++) {
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
     initialSlide: 0,
-    slidesPerView: 3, // number of slides per view
+
     loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
@@ -221,6 +234,17 @@ for (let i = 0; i < sliderControlParent.length; i++) {
     navigation: {
       nextEl: nx,
       prevEl: pr
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1.5,
+      },
+      480: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      }
     }
   });
 }

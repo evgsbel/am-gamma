@@ -55,9 +55,15 @@ ul {
 h1,
 .title-h1 {
   font-weight: 900;
-  font-size: 62px;
+  font-size: 3.875em;
   line-height: 1.2;
   color: #475256;
+  @include r(576) {
+    font-size: 2.5em;
+  }
+  @include r(480) {
+    font-size: 2em;
+  }
 }
 
 h2,
