@@ -1103,100 +1103,231 @@ script: main
         </div>
       </div>
       <div class="col-10 col-sm-11">
-        <div class="map tabs">
-          <div class="map__dot map__dot_spb map__round map__round_black tabs__btn" data-path="spb">
-            <div class="map__round map__round_green">
-              <div class="map__round map__round_white"></div>
+        <div class="contacts__nav">
+          <button class="btn-reset tabs__btn contacts__btn is-active" data-path="nsk">Новосибирск</button>
+          <button class="btn-reset tabs__btn contacts__btn" data-path="msk">Москва</button>
+          <button class="btn-reset tabs__btn contacts__btn" data-path="spb">Санкт-Петербург</button>
+          <button class="btn-reset tabs__btn contacts__btn" data-path="nn">Нижний Новгород</button>
+        </div>
+
+        <div class="contacts__item tabs__content tabs__content_flex is-active" data-target="nsk" id="tab-2">
+          <div id="map1" class="map"></div>
+          <div class="contacts__inner">
+            <img src="assets/img/ct-01.png" alt="" class="contacts__img">
+            <div class="contacts__info">
+              <p class="contacts__address">630049, <strong>Новосибирск</strong>, ул. Красный
+                проспект 157/1, офис 215</p>
+              <a href="tel:+73832093131" class="contacts__phone">+7 (383) 209 - 31 - 31</a>
+              <a href="tel:8(800)5116003" class="contacts__phone contacts__phone_federal">8 (800) 511 - 60 - 03</a>
+              <p class="contacts__work-time">Прием звонков: с <strong>9:30</strong> до <strong>18:00</strong> (Пн-Пт)
+              </p>
+              <p class="contacts__subtitle">По вопросам и условиям партнерства,
+                Вы&nbsp;можете обратиться по телефонам:</p>
+              <a href="tel:+73832093131" class="contacts__phone">+7 (383) 209 - 31 - 31</a>
+              <a href="mailto:info@am-gamma.ru" class="contacts__email">
+                <svg>
+                  <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
+                </svg>
+                info@am-gamma.ru
+              </a>
             </div>
           </div>
-          <div class="map__dot map__dot_msk map__round map__round_black tabs__btn " data-path="msk">
-            <div class="map__round map__round_green">
-              <div class="map__round map__round_white"></div>
+        </div>
+        <div class="contacts__item tabs__content tabs__content_flex" data-target="msk">
+          <div id="map2" class="map"></div>
+          <div class="contacts__inner">
+            <img src="assets/img/ct-02.png" alt="" class="contacts__img">
+            <div class="contacts__info">
+              <p class="contacts__address">109147, <strong>Москва</strong>, ул. Марксистская 34
+                корп 8, офис 1008</p>
+              <a href="tel:+74951476003" class="contacts__phone">+7 (495) 147 - 60 - 03</a>
+              <a href="tel:8(800)5116003" class="contacts__phone contacts__phone_federal">8 (800) 511 - 60 - 03</a>
+              <p class="contacts__work-time">Прием звонков: с <strong>9:30</strong> до <strong>18:00</strong> (Пн-Пт)
+              </p>
+              <p class="contacts__subtitle">По вопросам и условиям партнерства,
+                Вы&nbsp;можете обратиться по телефонам:</p>
+              <a href="tel:+74997097031" class="contacts__phone">+7 (499) 709 - 70 - 31</a>
+              <a href="mailto:info@am-gamma.ru" class="contacts__email">
+                <svg>
+                  <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
+                </svg>
+                info@am-gamma.ru
+              </a>
             </div>
           </div>
-          <div class="map__dot map__dot_nn map__round map__round_black tabs__btn" data-path="nn">
-            <div class="map__round map__round_green">
-              <div class="map__round map__round_white"></div>
+        </div>
+        <div class="contacts__item tabs__content tabs__content_flex" data-target="spb">
+          <div class="map" id="map3"></div>
+          <div class="contacts__inner">
+            <img src="assets/img/ct-03.png" alt="" class="contacts__img">
+            <div class="contacts__info">
+              <p class="contacts__address">191119, <strong>Санкт-Петербург</strong>,
+                ул. Социалистическая д. 21 офис С2048</p>
+              <a href="tel:78122196003" class="contacts__phone">+7 (812) 219 - 60 - 03</a>
+              <a href="tel:8(800)5116003" class="contacts__phone contacts__phone_federal">8 (800) 511 - 60 - 03</a>
+              <p class="contacts__work-time">Прием звонков: с <strong>9:30</strong> до <strong>18:00</strong> (Пн-Пт)
+              </p>
+              <a href="mailto:info@am-gamma.ru" class="contacts__email">
+                <svg>
+                  <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
+                </svg>
+                info@am-gamma.ru
+              </a>
             </div>
           </div>
-          <div class="map__dot map__dot_nsk map__round map__round_black tabs__btn is-active" data-path="nsk">
-            <div class="map__round map__round_green">
-              <div class="map__round map__round_white"></div>
+        </div>
+        <div class="contacts__item tabs__content tabs__content_flex" data-target="nn">
+          <div class="map" id="map4"></div>
+          <div class="contacts__inner">
+            <img src="assets/img/ct-04.png" alt="" class="contacts__img">
+            <div class="contacts__info">
+              <p class="contacts__address">630049, <strong>Нижний Новгород</strong>,
+                Гаражная улица, 4</p>
+              <p class="contacts__subtitle">По вопросам и условиям партнерства,
+                Вы&nbsp;можете обратиться по телефонам:</p>
+              <a href="tel:+73832093131" class="contacts__phone">+7 (383) 209 - 31 - 31</a>
+              <a href="mailto:info@am-gamma.ru" class="contacts__email">
+                <svg>
+                  <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
+                </svg>
+                info@am-gamma.ru
+              </a>
             </div>
           </div>
-
-          <div class="map__info tabs__content" data-target="spb"
-               style="background-image: url('assets/img/map-info-spb.png')">
-            <img src="assets/img/map-logo.png" alt="" class="map__logo">
-            <p class="map__address"><span class="map__city">Санкт-Петербург,</span>
-              ул.&nbsp;Социалистическая, 21 оф. С2048 </p>
-            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>
-            <a href="mailto:info@am-gamma.ru" class="map__email">
-              <svg>
-                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
-              </svg>
-              info@am-gamma.ru
-            </a>
-          </div>
-
-          <div class="map__info tabs__content" data-target="msk"
-               style="background-image: url('assets/img/map-info-msk.png')">
-            <img src="assets/img/map-logo.png" alt="" class="map__logo">
-            <p class="map__address"><span class="map__city">Москва,</span>
-              ул. Марксистская, 34к8, офис 1008</p>
-            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>
-            <a href="mailto:info@am-gamma.ru" class="map__email">
-              <svg>
-                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
-              </svg>
-              info@am-gamma.ru
-            </a>
-          </div>
-
-          <div class="map__info tabs__content" data-target="nn"
-               style="background-image: url('assets/img/map-info-nn.png')">
-            <img src="assets/img/map-logo.png" alt="" class="map__logo">
-            <p class="map__address"><span class="map__city">Нижний Новгород,</span>
-              Гаражная улица, 4 </p>
-            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>
-            <a href="mailto:info@am-gamma.ru" class="map__email">
-              <svg>
-                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
-              </svg>
-              info@am-gamma.ru
-            </a>
-          </div>
-
-          <div class="map__info tabs__content is-active" data-target="nsk"
-               style="background-image: url('assets/img/map-info-nsk.png')">
-            <img src="assets/img/map-logo.png" alt="" class="map__logo">
-            <p class="map__address"><span class="map__city">Новосибирск,</span>
-              ул. Мясниковой 30,
-              офис 11 </p>
-            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>
-            <a href="mailto:info@am-gamma.ru" class="map__email">
-              <svg>
-                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>
-              </svg>
-              info@am-gamma.ru
-            </a>
-          </div>
-
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="bottom-nav header__bottom">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-2 mr-auto">
-        {{> logo}}
-      </div>
-      <div class="col-9">
-        {{> nav}}
-      </div>
-    </div>
-  </div>
-</section>
+
+<!--section contacts old-->
+
+<!--<section class="contacts">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-10 offset-1">-->
+<!--        <h2 class="title-h2 contacts__title">Контакты</h2>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-1">-->
+<!--        <div class="pagination">-->
+<!--          <ul class="pagination__list">-->
+<!--            <li class="pagination__item ">-->
+<!--              <span class="pagination__count">01</span>-->
+<!--              <span class="pagination__dot"></span>-->
+<!--            </li>-->
+<!--            <li class="pagination__item">-->
+<!--              <span class="pagination__count">02</span>-->
+<!--              <span class="pagination__dot"></span>-->
+<!--            </li>-->
+<!--            <li class="pagination__item">-->
+<!--              <span class="pagination__count">03</span>-->
+<!--              <span class="pagination__dot"></span>-->
+<!--            </li>-->
+<!--            <li class="pagination__item">-->
+<!--              <span class="pagination__count">04</span>-->
+<!--              <span class="pagination__dot"></span>-->
+<!--            </li>-->
+<!--            <li class="pagination__item">-->
+<!--              <span class="pagination__count">05</span>-->
+<!--              <span class="pagination__dot"></span>-->
+<!--            </li>-->
+<!--            <li class="pagination__item">-->
+<!--              <span class="pagination__count">06</span>-->
+<!--              <span class="pagination__dot"></span>-->
+<!--            </li>-->
+<!--            <li class="pagination__item is-active">-->
+<!--              <span class="pagination__count">07</span>-->
+<!--              <span class="pagination__dot"></span>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-10 col-sm-11">-->
+<!--        <div class="map tabs">-->
+<!--          <div class="map__dot map__dot_spb map__round map__round_black tabs__btn" data-path="spb">-->
+<!--            <div class="map__round map__round_green">-->
+<!--              <div class="map__round map__round_white"></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="map__dot map__dot_msk map__round map__round_black tabs__btn " data-path="msk">-->
+<!--            <div class="map__round map__round_green">-->
+<!--              <div class="map__round map__round_white"></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="map__dot map__dot_nn map__round map__round_black tabs__btn" data-path="nn">-->
+<!--            <div class="map__round map__round_green">-->
+<!--              <div class="map__round map__round_white"></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="map__dot map__dot_nsk map__round map__round_black tabs__btn is-active" data-path="nsk">-->
+<!--            <div class="map__round map__round_green">-->
+<!--              <div class="map__round map__round_white"></div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="map__info tabs__content" data-target="spb"-->
+<!--               style="background-image: url('assets/img/map-info-spb.png')">-->
+<!--            <img src="assets/img/map-logo.png" alt="" class="map__logo">-->
+<!--            <p class="map__address"><span class="map__city">Санкт-Петербург,</span>-->
+<!--              ул.&nbsp;Социалистическая, 21 оф. С2048 </p>-->
+<!--            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>-->
+<!--            <a href="mailto:info@am-gamma.ru" class="map__email">-->
+<!--              <svg>-->
+<!--                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>-->
+<!--              </svg>-->
+<!--              info@am-gamma.ru-->
+<!--            </a>-->
+<!--          </div>-->
+
+<!--          <div class="map__info tabs__content" data-target="msk"-->
+<!--               style="background-image: url('assets/img/map-info-msk.png')">-->
+<!--            <img src="assets/img/map-logo.png" alt="" class="map__logo">-->
+<!--            <p class="map__address"><span class="map__city">Москва,</span>-->
+<!--              ул. Марксистская, 34к8, офис 1008</p>-->
+<!--            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>-->
+<!--            <a href="mailto:info@am-gamma.ru" class="map__email">-->
+<!--              <svg>-->
+<!--                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>-->
+<!--              </svg>-->
+<!--              info@am-gamma.ru-->
+<!--            </a>-->
+<!--          </div>-->
+
+<!--          <div class="map__info tabs__content" data-target="nn"-->
+<!--               style="background-image: url('assets/img/map-info-nn.png')">-->
+<!--            <img src="assets/img/map-logo.png" alt="" class="map__logo">-->
+<!--            <p class="map__address"><span class="map__city">Нижний Новгород,</span>-->
+<!--              Гаражная улица, 4 </p>-->
+<!--            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>-->
+<!--            <a href="mailto:info@am-gamma.ru" class="map__email">-->
+<!--              <svg>-->
+<!--                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>-->
+<!--              </svg>-->
+<!--              info@am-gamma.ru-->
+<!--            </a>-->
+<!--          </div>-->
+
+<!--          <div class="map__info tabs__content is-active" data-target="nsk"-->
+<!--               style="background-image: url('assets/img/map-info-nsk.png')">-->
+<!--            <img src="assets/img/map-logo.png" alt="" class="map__logo">-->
+<!--            <p class="map__address"><span class="map__city">Новосибирск,</span>-->
+<!--              ул. Мясниковой 30,-->
+<!--              офис 11 </p>-->
+<!--            <a href="tel:83832093131" class="map__phone">+7 383 209 31 31</a>-->
+<!--            <a href="mailto:info@am-gamma.ru" class="map__email">-->
+<!--              <svg>-->
+<!--                <use xlink:href="assets/img/sprite.svg#icon-letter"></use>-->
+<!--              </svg>-->
+<!--              info@am-gamma.ru-->
+<!--            </a>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+

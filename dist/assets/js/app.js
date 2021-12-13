@@ -275,4 +275,91 @@ document.addEventListener('DOMContentLoaded', function () {
       el.classList.add('is-active');
     });
   });
+}); // maps
+
+ymaps.ready(function () {
+  var myMapNsk = new ymaps.Map('map1', {
+    center: [55.059394, 82.910054],
+    zoom: 17
+  }),
+      myMapMsk = new ymaps.Map('map2', {
+    center: [55.734851, 37.665138],
+    zoom: 17
+  }),
+      myMapSpb = new ymaps.Map('map3', {
+    center: [59.920163, 30.346132],
+    zoom: 17
+  }),
+      myMapNn = new ymaps.Map('map4', {
+    center: [56.308415, 44.031436],
+    zoom: 17
+  }),
+      myPlacemarkNsk = new ymaps.Placemark(myMapNsk.getCenter(), {}, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#imageWithContent',
+    // Своё изображение иконки метки.
+    iconImageHref: 'assets/img/map-dot.png',
+    // Размеры метки.
+    iconImageSize: [46, 46]
+  }),
+      myPlacemarkMsk = new ymaps.Placemark(myMapMsk.getCenter(), {}, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#imageWithContent',
+    // Своё изображение иконки метки.
+    iconImageHref: 'assets/img/map-dot.png',
+    // Размеры метки.
+    iconImageSize: [46, 46]
+  }),
+      myPlacemarkSpb = new ymaps.Placemark(myMapSpb.getCenter(), {}, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#imageWithContent',
+    // Своё изображение иконки метки.
+    iconImageHref: 'assets/img/map-dot.png',
+    // Размеры метки.
+    iconImageSize: [46, 46]
+  }),
+      myPlacemarkNn = new ymaps.Placemark(myMapNn.getCenter(), {}, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#imageWithContent',
+    // Своё изображение иконки метки.
+    iconImageHref: 'assets/img/map-dot.png',
+    // Размеры метки.
+    iconImageSize: [46, 46]
+  });
+  myMapNsk.balloon.open(myMapNsk.getCenter(), {
+    contentBody: '<div class="map__caption">Красный проспект, 157/1</div>'
+  }, {
+    closeButton: false,
+    offset: [100, 65],
+    minWidth: 180
+  });
+  myMapMsk.balloon.open(myMapMsk.getCenter(), {
+    contentBody: '<div class="map__caption">Марксистская улица, 34к8</div>'
+  }, {
+    closeButton: false,
+    offset: [100, 65],
+    minWidth: 180
+  });
+  myMapSpb.balloon.open(myMapSpb.getCenter(), {
+    contentBody: '<div class="map__caption">Социалистическая улица, 21</div>'
+  }, {
+    closeButton: false,
+    offset: [100, 65],
+    minWidth: 180
+  });
+  myMapNn.balloon.open(myMapNn.getCenter(), {
+    contentBody: '<div class="map__caption">Гаражная улица, 4</div>'
+  }, {
+    closeButton: false,
+    offset: [100, 65],
+    minWidth: 180
+  });
+  myMapNsk.geoObjects.add(myPlacemarkNsk);
+  myMapMsk.geoObjects.add(myPlacemarkMsk);
+  myMapSpb.geoObjects.add(myPlacemarkSpb);
+  myMapNn.geoObjects.add(myPlacemarkNn);
 });

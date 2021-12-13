@@ -12,6 +12,9 @@
     width: 40px;
     left: 15px;
   }
+  @include r(480) {
+    width: 30px;
+  }
   &__wr {
     display: flex;
     flex-direction: column;
@@ -36,6 +39,9 @@
     @include r(768) {
       width: 40px;
     }
+    @include r(480) {
+      width: 30px;
+    }
   }
   &.is-active {
     color: $white;
@@ -55,5 +61,4 @@
       left: calc(100% - 50px);
     }
   }
-
 }

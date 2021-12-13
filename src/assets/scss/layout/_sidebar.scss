@@ -8,6 +8,9 @@
   height: calc(100% - 40px);
   &.opened-menu {
     top: 0;
+    .sidebar__arrow {
+      display: none;
+    }
   }
   @include r(1024) {
     border: none;
