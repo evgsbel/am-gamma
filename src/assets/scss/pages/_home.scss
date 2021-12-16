@@ -15,7 +15,7 @@
   &__title {
     margin-bottom: 82px;
     max-width: 750px;
-    @include r(576) {
+    @include r(600) {
       max-width: 100%;
     }
   }
@@ -506,7 +506,7 @@
   &__pagination {
     margin-top: 50px;
     justify-content: center;
-    @include r(576) {
+    @include r(600) {
       margin-top: 0;
     }
   }

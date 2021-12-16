@@ -6,7 +6,7 @@
     margin-bottom: 40px;
     padding: 10px 0;
     background-color: $basic-black;
-    @include r(576) {
+    @include r(600) {
       display: none;
     }
   }
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    @include r(576) {
+    @include r(600) {
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
@@ -47,7 +47,7 @@
     font-size: 0.9em;
     line-height: 1.2;
     color: $green;
-    @include r(576) {
+    @include r(600) {
       font-size: 1.5em;
     }
     &:not(:last-child) {
@@ -69,7 +69,7 @@
   display: flex;
   align-items: center;
   margin-right: auto;
-  @include r(576) {
+  @include r(600) {
     flex-direction: column;
     align-items: flex-start;
   }
