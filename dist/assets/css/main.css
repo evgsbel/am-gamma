@@ -14787,7 +14787,14 @@ ul {
   text-transform: uppercase;
 }
 
-/* line 75, src/assets/scss/base/_typography.scss */
+@media only screen and (max-width: 375px) {
+  /* line 69, src/assets/scss/base/_typography.scss */
+  .title-h2 {
+    font-size: 18px;
+  }
+}
+
+/* line 78, src/assets/scss/base/_typography.scss */
 .title-h2::after {
   content: '';
   display: block;
@@ -18216,10 +18223,12 @@ ul {
 
 /* line 496, src/assets/scss/pages/_inners.scss */
 .inner-service {
-  margin-bottom: 100px;
+  padding-top: 40px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(70%, white), color-stop(30%, whitesmoke));
+  background: linear-gradient(90deg, white 70%, whitesmoke 30%);
 }
 
-/* line 498, src/assets/scss/pages/_inners.scss */
+/* line 499, src/assets/scss/pages/_inners.scss */
 .inner-service__heading {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18228,14 +18237,31 @@ ul {
   margin-bottom: 100px;
 }
 
-/* line 503, src/assets/scss/pages/_inners.scss */
+@media only screen and (max-width: 768px) {
+  /* line 499, src/assets/scss/pages/_inners.scss */
+  .inner-service__heading {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/* line 507, src/assets/scss/pages/_inners.scss */
 .inner-service__top-content {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 calc(50% - 36px);
           flex: 0 0 calc(50% - 36px);
 }
 
-/* line 505, src/assets/scss/pages/_inners.scss */
+@media only screen and (max-width: 768px) {
+  /* line 507, src/assets/scss/pages/_inners.scss */
+  .inner-service__top-content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
+/* line 512, src/assets/scss/pages/_inners.scss */
 .inner-service__top-content p {
   display: block;
   font-weight: 300;
@@ -18243,35 +18269,255 @@ ul {
   line-height: 1.5;
 }
 
-/* line 510, src/assets/scss/pages/_inners.scss */
+/* line 517, src/assets/scss/pages/_inners.scss */
 .inner-service__top-content p strong {
   font-weight: bold;
   line-height: 2;
   color: #a7cf43;
 }
 
-/* line 516, src/assets/scss/pages/_inners.scss */
+/* line 523, src/assets/scss/pages/_inners.scss */
 .inner-service__top-content:not(:last-child) {
   margin-bottom: 10px;
 }
 
-/* line 520, src/assets/scss/pages/_inners.scss */
+/* line 527, src/assets/scss/pages/_inners.scss */
 .inner-service__img {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(50% - 36px);
-          flex: 0 0 calc(50% - 36px);
+  max-width: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-/* line 524, src/assets/scss/pages/_inners.scss */
+@media only screen and (max-width: 768px) {
+  /* line 527, src/assets/scss/pages/_inners.scss */
+  .inner-service__img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    max-width: 100%;
+  }
+}
+
+/* line 537, src/assets/scss/pages/_inners.scss */
 .inner-service__item:not(:last-child) {
   margin-bottom: 30px;
 }
 
-/* line 529, src/assets/scss/pages/_inners.scss */
+/* line 542, src/assets/scss/pages/_inners.scss */
 .inner-service__content p {
   font-weight: 300;
   font-size: 1.25em;
   line-height: 1.5;
+}
+
+/* line 550, src/assets/scss/pages/_inners.scss */
+.service-info {
+  margin-bottom: 50px;
+  padding: 100px 0;
+  background-color: #fbfbfb;
+}
+
+/* line 554, src/assets/scss/pages/_inners.scss */
+.service-info__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 554, src/assets/scss/pages/_inners.scss */
+  .service-info__nav {
+    gap: 20px;
+  }
+}
+
+/* line 562, src/assets/scss/pages/_inners.scss */
+.service-info__btn {
+  position: relative;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% / 3);
+          flex: 0 0 calc(100% / 3);
+  font-weight: 300;
+  font-size: 1.25em;
+  line-height: 2;
+  text-align: center;
+  color: #475256;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+@media only screen and (max-width: 960px) {
+  /* line 562, src/assets/scss/pages/_inners.scss */
+  .service-info__btn {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 562, src/assets/scss/pages/_inners.scss */
+  .service-info__btn {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    font-size: 1.25em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 562, src/assets/scss/pages/_inners.scss */
+  .service-info__btn {
+    font-size: 1em;
+  }
+}
+
+/* line 581, src/assets/scss/pages/_inners.scss */
+.service-info__btn.is-active {
+  font-weight: 700;
+  color: #212E33;
+  border-bottom: 1px solid #a7cf43;
+}
+
+/* line 585, src/assets/scss/pages/_inners.scss */
+.service-info__btn.is-active::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: 0 auto;
+  border: 12px solid transparent;
+  border-top: 6px solid #a7cf43;
+}
+
+/* line 596, src/assets/scss/pages/_inners.scss */
+.service-info__btn:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  display: block;
+  width: 1px;
+  height: 21px;
+  background-color: #e5e5e5;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 596, src/assets/scss/pages/_inners.scss */
+  .service-info__btn:not(:last-child)::before {
+    content: none;
+  }
+}
+
+/* line 610, src/assets/scss/pages/_inners.scss */
+.service-info__list {
+  background: #ffffff;
+  -webkit-box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* line 615, src/assets/scss/pages/_inners.scss */
+.service-info__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 375px) {
+  /* line 615, src/assets/scss/pages/_inners.scss */
+  .service-info__item {
+    padding: 10px;
+  }
+}
+
+/* line 621, src/assets/scss/pages/_inners.scss */
+.service-info__item:not(:last-child) {
+  border-bottom: 1px dashed #E5E5E5;
+}
+
+/* line 624, src/assets/scss/pages/_inners.scss */
+.service-info__item:first-child .service-info__number {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* line 628, src/assets/scss/pages/_inners.scss */
+.service-info__item:last-child .service-info__number {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* line 632, src/assets/scss/pages/_inners.scss */
+.service-info__item.is-active {
+  background-color: #a7cf43;
+  color: #ffffff;
+}
+
+/* line 638, src/assets/scss/pages/_inners.scss */
+.service-info__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-right: 20px;
+  padding: 7px 0 10px;
+  width: 100px;
+  height: 100%;
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 1.35;
+  color: #ffffff;
+  background-color: #a7cf43;
+}
+
+@media only screen and (max-width: 600px) {
+  /* line 638, src/assets/scss/pages/_inners.scss */
+  .service-info__number {
+    padding: 5% 0 5%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* line 638, src/assets/scss/pages/_inners.scss */
+  .service-info__number {
+    padding: 7% 0 7%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  /* line 638, src/assets/scss/pages/_inners.scss */
+  .service-info__number {
+    display: none;
+  }
+}
+
+/* line 661, src/assets/scss/pages/_inners.scss */
+.service-info__number svg {
+  margin-right: 8px;
+  width: 10px;
+  height: 10px;
+}
+
+/* line 669, src/assets/scss/pages/_inners.scss */
+.service-content {
+  margin-bottom: 100px;
 }
 
 /*# sourceMappingURL=../../../scss */
