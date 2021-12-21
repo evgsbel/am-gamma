@@ -162,8 +162,11 @@ img {
 }
 
 
-
-
+.container {
+  @include r(1600) {
+    max-width: calc(100% - 160px);
+  }
+}
 
 
 

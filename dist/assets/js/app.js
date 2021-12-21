@@ -6,8 +6,10 @@ $(window).scroll(function () {
 
   if (height > 100) {
     $('.js-to-top').fadeIn();
+    $('.burger ').addClass('is-fixed');
   } else {
     $('.js-to-top').fadeOut();
+    $('.burger ').removeClass('is-fixed');
   }
 });
 $(document).ready(function () {
@@ -173,9 +175,9 @@ for (var _i3 = 0; _i3 < sliderControlParent.length; _i3++) {
     // used to center the active slide
     spaceBetween: 0,
     // distance between slides in px
-    initialSlide: 0,
+    initialSlide: 2,
     // number of slides per view
-    loop: true,
+    loop: false,
     // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0,
@@ -226,8 +228,9 @@ for (var _i4 = 0; _i4 < sliderControlParent.length; _i4++) {
     // used to center the active slide
     spaceBetween: 0,
     // distance between slides in px
-    initialSlide: 0,
-    loop: true,
+    initialSlide: 2,
+    // number of slides per view
+    loop: false,
     // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0,

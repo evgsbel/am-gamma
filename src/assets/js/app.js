@@ -4,8 +4,10 @@ $(window).scroll(function () {
   var height = $(window).scrollTop();
   if (height > 100) {
     $('.js-to-top').fadeIn();
+    $('.burger ').addClass('is-fixed');
   } else {
     $('.js-to-top').fadeOut();
+    $('.burger ').removeClass('is-fixed');
   }
 });
 $(document).ready(function () {
@@ -123,6 +125,8 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
     direction: "vertical",
     speed: 800,
     loop: true,
+
+
     pagination: {
       el: pg,
       clickable: true,
@@ -179,9 +183,9 @@ for (let i = 0; i < sliderControlParent.length; i++) {
     grabCursor: true, // sets grab cursor as the hover cursor over the slides
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
-    initialSlide: 0,
+    initialSlide: 2,
     // number of slides per view
-    loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    loop: false, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
       stretch: 150, // stretches the space between the slides in px
@@ -221,9 +225,9 @@ for (let i = 0; i < sliderControlParent.length; i++) {
     grabCursor: true, // sets grab cursor as the hover cursor over the slides
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
-    initialSlide: 0,
-
-    loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    initialSlide: 2,
+    // number of slides per view
+    loop: false, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
       stretch: 150, // stretches the space between the slides in px

@@ -7,13 +7,16 @@
   gap: 6px;
   width: 50px;
   color: #475256;
-  transition: color .5s cubic-bezier(.25, .46, .45, .94), left .5s cubic-bezier(.25, .46, .45, .94);
+  transition: color .5s cubic-bezier(.25, .46, .45, .94), left .5s cubic-bezier(.25, .46, .45, .94), transform .3s ease-in-out;
   @include r(768) {
     width: 40px;
     left: 15px;
   }
   @include r(480) {
     width: 30px;
+  }
+  &.is-fixed {
+    transform: translateY(-410%);
   }
   &__wr {
     display: flex;

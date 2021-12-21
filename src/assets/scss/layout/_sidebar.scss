@@ -12,9 +12,6 @@
       display: none;
     }
   }
-  @include r(1024) {
-    border: none;
-  }
   @include r(768) {
     width: 0;
   }
