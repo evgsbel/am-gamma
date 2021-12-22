@@ -51,7 +51,19 @@ var openSubMenu = function openSubMenu() {
   });
 };
 
-openSubMenu(); // case slider
+openSubMenu(); // hero slider
+
+var heroSwiper = new Swiper('.hero__swiper', {
+  // Optional parameters
+  speed: 400,
+  spaceBetween: 75,
+  slidesPerView: 1,
+  // If we need pagination
+  pagination: {
+    el: '.slider-pagination',
+    clickable: true
+  }
+}); // case slider
 
 var sliderCaseParent = document.getElementsByClassName("case");
 
@@ -121,6 +133,21 @@ for (var _i = 0; _i < sliderNewsParent.length; _i++) {
     navigation: {
       nextEl: _nx,
       prevEl: _pr
+    },
+    breakpoints: {
+      320: {
+        direction: "horizontal",
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      960: {
+        direction: "horizontal",
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1025: {
+        direction: "vertical"
+      }
     }
   });
 }

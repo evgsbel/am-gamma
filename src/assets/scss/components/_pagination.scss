@@ -48,6 +48,9 @@
         height: 2px;
         background-color: $green;
         transform: translateY(-50%);
+        @include r(1024) {
+          left: -15px;
+        }
       }
       & > .pagination__count {
         display: block;

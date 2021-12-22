@@ -8,15 +8,25 @@
   width: 50px;
   color: #475256;
   transition: color .5s cubic-bezier(.25, .46, .45, .94), left .5s cubic-bezier(.25, .46, .45, .94), transform .3s ease-in-out;
-  @include r(768) {
+  @include r(960) {
     width: 40px;
-    left: 15px;
+    left: 90%;
   }
-  @include r(480) {
+  @include r(375) {
     width: 30px;
+    left: 85%;
   }
   &.is-fixed {
     transform: translateY(-410%);
+    @include r(1024) {
+      transform: translateY(-350%);
+    }
+    @include r(960) {
+      transform: translateY(-250%);
+    }
+    @include r(480) {
+      transform: translateY(-200%);
+    }
   }
   &__wr {
     display: flex;
@@ -38,7 +48,7 @@
     width: 50px;
     height: 4px;
     background-color: currentColor;
-    transition: transform .3s cubic-bezier(.25, .46, .45, .94),  opacity .1s cubic-bezier(.25, .46, .45, .94);
+    transition: transform .7s cubic-bezier(.25, .46, .45, .94),  opacity .7s cubic-bezier(.25, .46, .45, .94);
     @include r(768) {
       width: 40px;
     }

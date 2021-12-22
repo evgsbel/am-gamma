@@ -7,7 +7,7 @@
     padding: 10px 0;
     background-color: $basic-black;
     @include r(600) {
-      display: none;
+      margin-bottom: 10px;
     }
   }
   &__contacts {
@@ -15,10 +15,7 @@
     align-items: center;
     justify-content: flex-end;
     @include r(600) {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      margin-top: 20px;
+      flex-wrap: wrap;
     }
   }
   &__email {
@@ -28,9 +25,14 @@
     font-size: 0.75em;
     line-height: 1.7;
     color: $white;
-    @include r(576) {
-      font-size: 1.5em;
+    @include r(600) {
+      font-size: 1em;
       margin: 0;
+      flex-basis: 50%;
+    }
+    @include r(480) {
+      flex-basis: 100%;
+      justify-content: flex-end;
     }
     svg {
       margin-right: 7px;
@@ -48,10 +50,17 @@
     line-height: 1.2;
     color: $green;
     @include r(600) {
-      font-size: 1.5em;
+      font-size: 1em;
+    }
+    @include r(480) {
+      flex-basis: 100%;
+      text-align: right;
     }
     &:not(:last-child) {
       margin-right: 10px;
+      @include r(600) {
+        margin-right: 0;
+      }
     }
     &:hover {
       color: $green;
@@ -80,8 +89,8 @@
     line-height: 1.7;
     color: $white;
     transition: color .3s ease-in-out;
-    @include r(576) {
-      font-size: 1.5em;
+    @include r(600) {
+      font-size: 1em;
     }
     &:not(:last-child) {
       margin-right: 2em;

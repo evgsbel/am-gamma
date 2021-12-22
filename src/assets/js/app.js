@@ -56,6 +56,22 @@ const openSubMenu = () => {
 
 openSubMenu();
 
+// hero slider
+
+
+
+const heroSwiper = new Swiper('.hero__swiper', {
+  // Optional parameters
+  speed: 400,
+  spaceBetween: 75,
+  slidesPerView: 1,
+  // If we need pagination
+  pagination: {
+    el: '.slider-pagination',
+    clickable: true,
+  },
+});
+
 // case slider
 
 let sliderCaseParent = document.getElementsByClassName("case");
@@ -125,8 +141,6 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
     direction: "vertical",
     speed: 800,
     loop: true,
-
-
     pagination: {
       el: pg,
       clickable: true,
@@ -134,6 +148,21 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
     navigation: {
       nextEl: nx,
       prevEl: pr
+    },
+    breakpoints: {
+      320: {
+        direction: "horizontal",
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      960: {
+        direction: "horizontal",
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1025: {
+        direction: "vertical",
+      }
     }
   });
 }

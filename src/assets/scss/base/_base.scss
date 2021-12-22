@@ -22,6 +22,9 @@ body {
   &.opened-menu {
     padding: 0 calc(20px - (100vw - 100%)) 0 0;
     overflow: hidden;
+    @include r(960) {
+      padding: 0;
+    }
   }
   @include r(600) {
     padding-top: 0 !important;
@@ -165,6 +168,9 @@ img {
 .container {
   @include r(1600) {
     max-width: calc(100% - 160px);
+  }
+  @include r(960) {
+    max-width: 100%;
   }
 }
 

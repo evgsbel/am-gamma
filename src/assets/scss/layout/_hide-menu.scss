@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 80;
+  z-index:-1;
   padding-top: 80px;
   background-image: url('../img/hide-menu-bg.png');
   background-color: rgba(71,82,86,1);
@@ -16,6 +16,7 @@
   }
   &.is-open {
     transform: translateX(0);
+    z-index: 80;
   }
   &__logo {
     display: block;

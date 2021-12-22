@@ -14,8 +14,12 @@
   &__title {
     margin-bottom: 82px;
     max-width: 750px;
-    @include r(600) {
+    @include r(768) {
       max-width: 100%;
+    }
+    @include r(325) {
+      max-width: 90%;
+      font-size: 20px;
     }
   }
   &__subtitle {
@@ -24,6 +28,9 @@
     font-size: 1.25em;
     line-height: 1.2;
     color: #475256;
+    @include r(325) {
+      max-width: 90%;
+    }
   }
   &__btn {
     margin-bottom: 235px;
@@ -52,19 +59,38 @@
       font-size: 1em;
     }
   }
+  &__swiper {
+    @include r(1024) {
+      padding-bottom: 50px;
+    }
+  }
+  &__pagination {
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    @include r(1024) {
+      bottom: 0;
+    }
+  }
 }
 
 // why section
 
 .why {
   padding-bottom: 171px;
-  @include r(1024) {
+  @include r(1200) {
     padding-bottom: 80px;
+  }
+  @include r(1024) {
+    padding-bottom: 20px;
   }
   &.about-number {
     padding-top: 100px;
-    @include r(1024) {
+    @include r(1200) {
       padding-bottom: 80px;
+    }
+    @include r(1024) {
+      padding-bottom: 20px;
     }
   }
   &__title {
@@ -111,14 +137,16 @@
     z-index: -1;
     display: flex;
     width: 0;
-    height: 100%;
+    height: calc(100%);
     background-color: $white;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     opacity: 0;
     transition: all .5s cubic-bezier(.25, .46, .45, .94);
-    @include r(1200) {
+    padding-bottom: 20px;
+    @include r(1440) {
       height: max-content;
+
     }
     @include r(768) {
       flex-wrap: wrap;
@@ -175,12 +203,13 @@
     @include r(1366) {
       font-size: 1em;
     }
-    @include r(1080) {
+    @include r(1100) {
       font-size: 0.875em;
     }
-    @include r(1024) {
-      font-size: 1em;
+    @include r(576) {
+      font-size: 1.25em;
     }
+
   }
   &__plus {
     margin-right: 9px;
@@ -314,6 +343,9 @@
     font-size: 1.25em;
     line-height: 1.2;
     transition: color .4s ease-in-out;
+    @include r(1024) {
+      margin-top: 20px;
+    }
     @include r(480) {
       flex-wrap: wrap;
     }
@@ -340,7 +372,7 @@
       margin: -40px 0 -70px 0px;
     }
     @include r(480) {
-      padding: 0;
+      padding: 15px;
       margin: 0;
     }
   }
@@ -443,7 +475,12 @@
     @include r(480) {
       padding: 0;
       margin: 0;
+      width: calc(100% + 30px);
+      margin-left: -15px;
     }
+  }
+  &__navigation {
+    justify-content: flex-end;
   }
 }
 
@@ -511,7 +548,7 @@
   &__pagination {
     margin-top: 50px;
     justify-content: center;
-    @include r(600) {
+    @include r(1024) {
       margin-top: 0;
     }
   }
@@ -582,13 +619,14 @@
     @include r(1200) {
       height: 600px;
     }
+    @include r(1024) {
+       height: auto;
+       padding-bottom: 50px;
+     }
   }
 }
 
 .news-list {
-  @include r(1024) {
-    display: none;
-  }
   &__item {
     padding-bottom: 22px;
     border-bottom: 1px solid #c4c4c4;
@@ -608,6 +646,12 @@
     max-height: 450px;
     overflow: hidden;
     padding-right: 35px;
+    @include r(1200) {
+      max-height: 500px;
+    }
+    @include r(1024) {
+      display: none;
+    }
   }
 }
 

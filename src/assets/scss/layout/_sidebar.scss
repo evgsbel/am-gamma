@@ -12,8 +12,9 @@
       display: none;
     }
   }
-  @include r(768) {
+  @include r(960) {
     width: 0;
+    border: none;
   }
 
   &__arrow {
@@ -24,8 +25,11 @@
     @include r(1024) {
       margin-top: 40vh;
     }
-    @include r(768) {
+    @include r(960) {
       margin-left: 15px;
+    }
+    @include r(600) {
+      margin-top: 60vh;
     }
   }
 }

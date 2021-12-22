@@ -39,7 +39,7 @@
       flex-direction: column;
       gap: 0;
     }
-    @include r(768) {
+    @include r(960) {
       flex-direction: row;
     }
     @include r(480) {
@@ -65,15 +65,12 @@
   }
   &__item {
     @include r(1024) {
-      flex: 0 0 48%;
-    }
-    @include r(768) {
-      flex: 1 0 100%;
+      flex: 0 0 100%;
     }
     &:not(:last-child) {
       margin-bottom: 35px;
-      @include r(768) {
-        margin-bottom: 15px;
+      @include r(1024) {
+        margin-bottom: 0;
       }
     }
   }

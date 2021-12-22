@@ -514,6 +514,12 @@
       font-weight: 300;
       font-size: 1.25em;
       line-height: 1.5;
+      @include r(1440) {
+        font-size: 1.125em;
+      }
+      @include r(1200) {
+        font-size: 1em;
+      }
       strong {
         font-weight: bold;
         line-height: 2;
@@ -536,6 +542,9 @@
   &__item {
     &:not(:last-child) {
       margin-bottom: 30px;
+      @include r(1440) {
+        margin-bottom: 20px;
+      }
     }
   }
   &__content {
