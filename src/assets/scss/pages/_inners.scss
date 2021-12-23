@@ -41,6 +41,7 @@
   }
   &__description {
     max-width: 730px;
+    padding-right: 20px;
     @include r(768) {
       padding: 20px;
       max-width: 100%;
@@ -627,7 +628,7 @@
   &__item {
     display: flex;
     align-items: center;
-    @include r(375) {
+    @include r(385) {
       padding: 10px;
     }
     &:not(:last-child) {
@@ -661,13 +662,13 @@
     line-height: 1.35;
     color: $white;
     background-color: $green;
-    @include r(600) {
+    @include r(768) {
       padding: 5% 0 5%;
     }
     @include r(480) {
       padding: 7% 0 7%;
     }
-    @include r(375) {
+    @include r(385) {
       display: none;
     }
     svg {
