@@ -217,7 +217,7 @@ for (let i = 0; i < sliderControlParent.length; i++) {
     loop: false, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
-      stretch: 150, // stretches the space between the slides in px
+      stretch: 0, // stretches the space between the slides in px
       depth: 200, // offsets the depth of neighboring slides
       modifier: 1, // effect multiplier
       slideShadows: false, // disables the shadow around the slide container

@@ -209,7 +209,7 @@ for (var _i3 = 0; _i3 < sliderControlParent.length; _i3++) {
     coverflowEffect: {
       rotate: 0,
       // slide rotation degree
-      stretch: 150,
+      stretch: 0,
       // stretches the space between the slides in px
       depth: 200,
       // offsets the depth of neighboring slides
