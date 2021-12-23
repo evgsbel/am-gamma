@@ -424,12 +424,14 @@
   }
   &__item {
     //position: absolute;
-    padding: 20px 20px 25px 31px;
-
+    //padding: 20px 20px 25px 31px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
     background: $white;
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     cursor: pointer;
+    overflow: hidden;
     &:hover {
       .control__arrow {
         width: 40px;
@@ -442,8 +444,12 @@
   &__icon {
     display: block;
     margin-left: auto;
+    padding-top: 20px;
+    padding-right: 20px;
   }
   &__for {
+    padding-left: 31px;
+    padding-top: 20px;
     font-weight: 300;
     font-size: 0.75em;
     line-height: 1.25;
@@ -452,6 +458,7 @@
     max-width: 172px;
   }
   &__caption {
+    padding-left: 31px;
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 1.1875em;
@@ -462,12 +469,14 @@
     }
   }
   &__descr {
+    padding-left: 31px;
     margin-bottom: 2em;
     font-weight: 300;
     font-size: 0.75em;
     line-height: 0.875;
   }
   &__arrow {
+    padding-right: 20px;
     display: block;
     margin-left: auto;
     width: 20px;

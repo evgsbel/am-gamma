@@ -209,7 +209,7 @@ for (var _i3 = 0; _i3 < sliderControlParent.length; _i3++) {
     coverflowEffect: {
       rotate: 0,
       // slide rotation degree
-      stretch: 0,
+      stretch: 150,
       // stretches the space between the slides in px
       depth: 200,
       // offsets the depth of neighboring slides
@@ -287,8 +287,78 @@ for (var _i4 = 0; _i4 < sliderControlParent.length; _i4++) {
       }
     }
   });
-} // tabs
+}
 
+$(function () {
+  function checkWidth() {
+    var windowWidth = $('body').innerWidth();
+
+    if (windowWidth < 600) {
+      var _sliderControlParent = document.getElementsByClassName("control");
+
+      for (var _i5 = 0; _i5 < _sliderControlParent.length; _i5++) {
+        var _el5 = _sliderControlParent[_i5];
+
+        var _sliderControlTop = _el5.getElementsByClassName("js-control-slider--top")[0];
+
+        var _nx5 = _el5.getElementsByClassName("slider-navigation_next")[0];
+
+        var _pr5 = _el5.getElementsByClassName("slider-navigation_prev")[0];
+
+        new Swiper(_sliderControlTop, {
+          speed: 300,
+          effect: 'coverflow',
+          // sets the effect to coverflow
+          grabCursor: true,
+          // sets grab cursor as the hover cursor over the slides
+          centeredSlides: true,
+          // used to center the active slide
+          spaceBetween: 0,
+          // distance between slides in px
+          initialSlide: 2,
+          // number of slides per view
+          loop: false,
+          // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+          coverflowEffect: {
+            rotate: 0,
+            // slide rotation degree
+            stretch: 150,
+            // stretches the space between the slides in px
+            depth: 200,
+            // offsets the depth of neighboring slides
+            modifier: 1,
+            // effect multiplier
+            slideShadows: false // disables the shadow around the slide container
+
+          },
+          navigation: {
+            nextEl: _nx5,
+            prevEl: _pr5
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1.5
+            },
+            480: {
+              slidesPerView: 2
+            },
+            768: {
+              slidesPerView: 3
+            }
+          }
+        });
+      }
+    } // control sliders slider
+    else {
+      console.log('asldaslkdjasd');
+    }
+  }
+
+  checkWidth();
+  $(window).resize(function () {
+    checkWidth(); // проверит при изменении размера окна клиента
+  });
+}); // tabs
 
 document.addEventListener('DOMContentLoaded', function () {
   var tabsBtn = document.querySelectorAll('.tabs__btn');
