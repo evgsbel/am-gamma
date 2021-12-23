@@ -196,25 +196,29 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
 
 // control slider
 
-let sliderControlParent = document.getElementsByClassName("control");
+// let sliderControlParent = document.getElementsByClassName("control");
+//
+// for (let i = 0; i < sliderControlParent.length; i++) {
+//
+//   let el = sliderControlParent[i];
+//
+//   let sliderControlTop = el.getElementsByClassName("js-control-slider--top")[0];
+//   let sliderControlBottom = el.getElementsByClassName("js-control-slider--top")[1];
+//   let nx = el.getElementsByClassName("slider-navigation_next")[0];
+//   let pr = el.getElementsByClassName("slider-navigation_prev")[0];
 
-for (let i = 0; i < sliderControlParent.length; i++) {
-
-  let el = sliderControlParent[i];
-
-  let sliderControlTop = el.getElementsByClassName("js-control-slider--top")[0];
-  let nx = el.getElementsByClassName("slider-navigation_next")[0];
-  let pr = el.getElementsByClassName("slider-navigation_prev")[0];
-
-  new Swiper(sliderControlTop, {
+  var swpTop = new Swiper('.js-control-slider--top', {
     speed: 300,
+    thumbs: {
+      swiper: swpBot
+    },
     effect: 'coverflow', // sets the effect to coverflow
     grabCursor: true, // sets grab cursor as the hover cursor over the slides
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
     initialSlide: 2,
     // number of slides per view
-    loop: false, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
       stretch: 150, // stretches the space between the slides in px
@@ -223,8 +227,8 @@ for (let i = 0; i < sliderControlParent.length; i++) {
       slideShadows: false, // disables the shadow around the slide container
     },
     navigation: {
-      nextEl: nx,
-      prevEl: pr
+      nextEl: ".slider-navigation_next",
+      prevEl: ".slider-navigation_prev",
     },
     breakpoints: {
       320: {
@@ -238,25 +242,19 @@ for (let i = 0; i < sliderControlParent.length; i++) {
       }
     }
   });
-}
 
-for (let i = 0; i < sliderControlParent.length; i++) {
-
-  let el = sliderControlParent[i];
-
-  let sliderControlBottom = el.getElementsByClassName("js-control-slider--bottom")[0];
-  let nx = el.getElementsByClassName("slider-navigation_next")[0];
-  let pr = el.getElementsByClassName("slider-navigation_prev")[0];
-
-  new Swiper(sliderControlBottom, {
+  var swpBot = new Swiper('.js-control-slider--bottom', {
     speed: 300,
+
+    watchSlidesProgress: true,
+    loop: true,
     effect: 'coverflow', // sets the effect to coverflow
     grabCursor: true, // sets grab cursor as the hover cursor over the slides
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
     initialSlide: 2,
     // number of slides per view
-    loop: false, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+    // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
       stretch: 150, // stretches the space between the slides in px
@@ -264,10 +262,7 @@ for (let i = 0; i < sliderControlParent.length; i++) {
       modifier: 1, // effect multiplier
       slideShadows: false, // disables the shadow around the slide container
     },
-    navigation: {
-      nextEl: nx,
-      prevEl: pr
-    },
+
     breakpoints: {
       320: {
         slidesPerView: 1.5,
@@ -280,69 +275,21 @@ for (let i = 0; i < sliderControlParent.length; i++) {
       }
     }
   });
-}
 
-$(() => {
-  function checkWidth() {
-    let windowWidth = $('body').innerWidth()
+  swpTop.controller.control = swpBot;
+  swpBot.controller.control = swpTop;
+// }
 
-    if (windowWidth < 600) {
-      let sliderControlParent = document.getElementsByClassName("control");
-
-      for (let i = 0; i < sliderControlParent.length; i++) {
-
-        let el = sliderControlParent[i];
-
-        let sliderControlTop = el.getElementsByClassName("js-control-slider--top")[0];
-        let nx = el.getElementsByClassName("slider-navigation_next")[0];
-        let pr = el.getElementsByClassName("slider-navigation_prev")[0];
-
-        new Swiper(sliderControlTop, {
-          speed: 300,
-          effect: 'coverflow', // sets the effect to coverflow
-          grabCursor: true, // sets grab cursor as the hover cursor over the slides
-          centeredSlides: true, // used to center the active slide
-          spaceBetween: 0,// distance between slides in px
-          initialSlide: 2,
-          // number of slides per view
-          loop: false, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
-          coverflowEffect: {
-            rotate: 0, // slide rotation degree
-            stretch: 150, // stretches the space between the slides in px
-            depth: 200, // offsets the depth of neighboring slides
-            modifier: 1, // effect multiplier
-            slideShadows: false, // disables the shadow around the slide container
-          },
-          navigation: {
-            nextEl: nx,
-            prevEl: pr
-          },
-          breakpoints: {
-            320: {
-              slidesPerView: 1.5,
-            },
-            480: {
-              slidesPerView: 2,
-            },
-            768: {
-              slidesPerView: 3,
-            }
-          }
-        });
-      }
-    }
-// control sliders slider
-
-
-    else {
-      console.log('asldaslkdjasd')
-    }
-  }
-  checkWidth();
-  $(window).resize(function () {
-    checkWidth(); // проверит при изменении размера окна клиента
-  });
-});
+// for (let i = 0; i < sliderControlParent.length; i++) {
+//
+//   let el = sliderControlParent[i];
+//
+//   let sliderControlBottom = el.getElementsByClassName("js-control-slider--bottom")[0];
+//   let nx = el.getElementsByClassName("slider-navigation_next")[0];
+//   let pr = el.getElementsByClassName("slider-navigation_prev")[0];
+//
+//
+// }
 
 
 // tabs
