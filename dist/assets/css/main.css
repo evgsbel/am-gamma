@@ -15558,7 +15558,15 @@ ul {
   display: flex;
 }
 
-/* line 8, src/assets/scss/layout/_breadcrumbs.scss */
+@media only screen and (max-width: 480px) {
+  /* line 5, src/assets/scss/layout/_breadcrumbs.scss */
+  .breadcrumbs__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+/* line 11, src/assets/scss/layout/_breadcrumbs.scss */
 .breadcrumbs__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15568,7 +15576,7 @@ ul {
           align-items: center;
 }
 
-/* line 11, src/assets/scss/layout/_breadcrumbs.scss */
+/* line 14, src/assets/scss/layout/_breadcrumbs.scss */
 .breadcrumbs__item::after {
   content: '';
   display: block;
@@ -15579,19 +15587,19 @@ ul {
   background-repeat: no-repeat;
 }
 
-/* line 21, src/assets/scss/layout/_breadcrumbs.scss */
+/* line 24, src/assets/scss/layout/_breadcrumbs.scss */
 .breadcrumbs__item_last::after {
   content: none;
 }
 
-/* line 26, src/assets/scss/layout/_breadcrumbs.scss */
+/* line 29, src/assets/scss/layout/_breadcrumbs.scss */
 .breadcrumbs__link {
   font-weight: 300;
   font-size: 0.75em;
   line-height: 2.5;
 }
 
-/* line 30, src/assets/scss/layout/_breadcrumbs.scss */
+/* line 33, src/assets/scss/layout/_breadcrumbs.scss */
 .breadcrumbs__link_last {
   font-weight: 700;
   color: #a7cf43;
@@ -18564,7 +18572,14 @@ ul {
   background-color: #fbfbfb;
 }
 
-/* line 563, src/assets/scss/pages/_inners.scss */
+@media only screen and (max-width: 768px) {
+  /* line 559, src/assets/scss/pages/_inners.scss */
+  .service-info {
+    padding: 50px 0;
+  }
+}
+
+/* line 566, src/assets/scss/pages/_inners.scss */
 .service-info__nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18575,13 +18590,13 @@ ul {
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 563, src/assets/scss/pages/_inners.scss */
+  /* line 566, src/assets/scss/pages/_inners.scss */
   .service-info__nav {
     gap: 20px;
   }
 }
 
-/* line 571, src/assets/scss/pages/_inners.scss */
+/* line 574, src/assets/scss/pages/_inners.scss */
 .service-info__btn {
   position: relative;
   -webkit-box-flex: 0;
@@ -18596,14 +18611,14 @@ ul {
 }
 
 @media only screen and (max-width: 960px) {
-  /* line 571, src/assets/scss/pages/_inners.scss */
+  /* line 574, src/assets/scss/pages/_inners.scss */
   .service-info__btn {
     font-size: 1em;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 571, src/assets/scss/pages/_inners.scss */
+  /* line 574, src/assets/scss/pages/_inners.scss */
   .service-info__btn {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
@@ -18613,20 +18628,20 @@ ul {
 }
 
 @media only screen and (max-width: 480px) {
-  /* line 571, src/assets/scss/pages/_inners.scss */
+  /* line 574, src/assets/scss/pages/_inners.scss */
   .service-info__btn {
     font-size: 1em;
   }
 }
 
-/* line 590, src/assets/scss/pages/_inners.scss */
+/* line 593, src/assets/scss/pages/_inners.scss */
 .service-info__btn.is-active {
   font-weight: 700;
   color: #212E33;
   border-bottom: 1px solid #a7cf43;
 }
 
-/* line 594, src/assets/scss/pages/_inners.scss */
+/* line 597, src/assets/scss/pages/_inners.scss */
 .service-info__btn.is-active::after {
   content: '';
   position: absolute;
@@ -18639,7 +18654,7 @@ ul {
   border-top: 6px solid #a7cf43;
 }
 
-/* line 605, src/assets/scss/pages/_inners.scss */
+/* line 608, src/assets/scss/pages/_inners.scss */
 .service-info__btn:not(:last-child)::before {
   content: '';
   position: absolute;
@@ -18652,13 +18667,13 @@ ul {
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 605, src/assets/scss/pages/_inners.scss */
+  /* line 608, src/assets/scss/pages/_inners.scss */
   .service-info__btn:not(:last-child)::before {
     content: none;
   }
 }
 
-/* line 619, src/assets/scss/pages/_inners.scss */
+/* line 622, src/assets/scss/pages/_inners.scss */
 .service-info__list {
   background: #ffffff;
   -webkit-box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
@@ -18666,7 +18681,7 @@ ul {
   border-radius: 10px;
 }
 
-/* line 624, src/assets/scss/pages/_inners.scss */
+/* line 627, src/assets/scss/pages/_inners.scss */
 .service-info__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18677,36 +18692,36 @@ ul {
 }
 
 @media only screen and (max-width: 375px) {
-  /* line 624, src/assets/scss/pages/_inners.scss */
+  /* line 627, src/assets/scss/pages/_inners.scss */
   .service-info__item {
     padding: 10px;
   }
 }
 
-/* line 630, src/assets/scss/pages/_inners.scss */
+/* line 633, src/assets/scss/pages/_inners.scss */
 .service-info__item:not(:last-child) {
   border-bottom: 1px dashed #E5E5E5;
 }
 
-/* line 633, src/assets/scss/pages/_inners.scss */
+/* line 636, src/assets/scss/pages/_inners.scss */
 .service-info__item:first-child .service-info__number {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-/* line 637, src/assets/scss/pages/_inners.scss */
+/* line 640, src/assets/scss/pages/_inners.scss */
 .service-info__item:last-child .service-info__number {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-/* line 641, src/assets/scss/pages/_inners.scss */
+/* line 644, src/assets/scss/pages/_inners.scss */
 .service-info__item.is-active {
   background-color: #a7cf43;
   color: #ffffff;
 }
 
-/* line 647, src/assets/scss/pages/_inners.scss */
+/* line 650, src/assets/scss/pages/_inners.scss */
 .service-info__number {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18732,34 +18747,34 @@ ul {
 }
 
 @media only screen and (max-width: 600px) {
-  /* line 647, src/assets/scss/pages/_inners.scss */
+  /* line 650, src/assets/scss/pages/_inners.scss */
   .service-info__number {
     padding: 5% 0 5%;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  /* line 647, src/assets/scss/pages/_inners.scss */
+  /* line 650, src/assets/scss/pages/_inners.scss */
   .service-info__number {
     padding: 7% 0 7%;
   }
 }
 
 @media only screen and (max-width: 375px) {
-  /* line 647, src/assets/scss/pages/_inners.scss */
+  /* line 650, src/assets/scss/pages/_inners.scss */
   .service-info__number {
     display: none;
   }
 }
 
-/* line 670, src/assets/scss/pages/_inners.scss */
+/* line 673, src/assets/scss/pages/_inners.scss */
 .service-info__number svg {
   margin-right: 8px;
   width: 10px;
   height: 10px;
 }
 
-/* line 678, src/assets/scss/pages/_inners.scss */
+/* line 681, src/assets/scss/pages/_inners.scss */
 .service-content {
   margin-bottom: 100px;
 }

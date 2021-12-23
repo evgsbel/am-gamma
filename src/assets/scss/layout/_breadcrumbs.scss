@@ -4,6 +4,9 @@
   padding-bottom: 30px;
   &__list {
     display: flex;
+    @include r(480) {
+      flex-wrap: wrap;
+    }
   }
   &__item {
     display: flex;
