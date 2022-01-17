@@ -207,6 +207,78 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
 //   let nx = el.getElementsByClassName("slider-navigation_next")[0];
 //   let pr = el.getElementsByClassName("slider-navigation_prev")[0];
 
+var swpTop = new Swiper('.js-control-slider--lt', {
+  speed: 300,
+  thumbs: {
+    swiper: swpBot
+  },
+
+  effect: "creative",
+  slidesPerView: 1.2, // sets the effect to coverflow
+  grabCursor: true, // sets grab cursor as the hover cursor over the slides
+  spaceBetween: 0,// distance between slides in px
+  // number of slides per view
+  // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+  creativeEffect: {
+    prev: {
+      shadow: false,
+      translate: [0, 0, -400],
+    },
+    next: {
+      translate: ["20%", 30, -100],
+      opacity: '0.5'
+    },
+  },
+  navigation: {
+    nextEl: ".slider-navigation_next",
+    prevEl: ".slider-navigation_prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    1200: {
+      slidesPerView: 1.2,
+    }
+  }
+});
+
+var swpTop = new Swiper('.js-control-slider--bt', {
+  speed: 300,
+  watchSlidesProgress: true,
+
+  effect: "creative",
+  slidesPerView: 1.2, // sets the effect to coverflow
+  grabCursor: true, // sets grab cursor as the hover cursor over the slides
+  spaceBetween: 0,// distance between slides in px
+  // number of slides per view
+   // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+  creativeEffect: {
+    prev: {
+      shadow: false,
+      translate: [0, 0, -400],
+    },
+    next: {
+      translate: ["20%", 30, -100],
+      opacity: '0.5'
+    },
+  },
+  navigation: {
+    nextEl: ".slider-navigation_next",
+    prevEl: ".slider-navigation_prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    1200: {
+      slidesPerView: 1.2,
+    }
+  }
+});
+
   var swpTop = new Swiper('.js-control-slider--top', {
     speed: 300,
     thumbs: {
@@ -216,15 +288,15 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
     grabCursor: true, // sets grab cursor as the hover cursor over the slides
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
-    initialSlide: 2,
+    initialSlide: 0,
     // number of slides per view
-    loop: true, // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
+     // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
       stretch: 150, // stretches the space between the slides in px
-      depth: 200, // offsets the depth of neighboring slides
-      modifier: 1, // effect multiplier
-      slideShadows: false, // disables the shadow around the slide container
+      depth: 0, // offsets the depth of neighboring slides
+      modifier: 2, // effect multiplier
+     // disables the shadow around the slide container
     },
     navigation: {
       nextEl: ".slider-navigation_next",
@@ -232,13 +304,25 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
     },
     breakpoints: {
       320: {
+        slidesPerView: 1,
+      },
+      560: {
         slidesPerView: 1.5,
       },
-      480: {
+      768: {
+        slidesPerView: 1.7,
+      },
+      1024: {
         slidesPerView: 2,
       },
-      768: {
-        slidesPerView: 3,
+      1200: {
+        slidesPerView: 1.5,
+      },
+      1400: {
+        slidesPerView: 1.7
+      },
+      1600: {
+        slidesPerView: 2
       }
     }
   });
@@ -247,31 +331,42 @@ for (let i = 0; i < sliderNewsParent.length; i++) {
     speed: 300,
 
     watchSlidesProgress: true,
-    loop: true,
+
     effect: 'coverflow', // sets the effect to coverflow
     grabCursor: true, // sets grab cursor as the hover cursor over the slides
     centeredSlides: true, // used to center the active slide
     spaceBetween: 0,// distance between slides in px
-    initialSlide: 2,
+    initialSlide: 0,
     // number of slides per view
     // sets the slides on a continuous loop// allows for pagination bullets to be dynamic and clickable
     coverflowEffect: {
       rotate: 0, // slide rotation degree
       stretch: 150, // stretches the space between the slides in px
-      depth: 200, // offsets the depth of neighboring slides
-      modifier: 1, // effect multiplier
-      slideShadows: false, // disables the shadow around the slide container
+      depth: 0, // offsets the depth of neighboring slides
+      modifier: 2, // effect multiplier
+     // disables the shadow around the slide container
     },
-
     breakpoints: {
       320: {
+        slidesPerView: 1,
+      },
+      560: {
         slidesPerView: 1.5,
       },
-      480: {
+      768: {
+        slidesPerView: 1.7,
+      },
+      1024: {
         slidesPerView: 2,
       },
-      768: {
-        slidesPerView: 3,
+      1200: {
+        slidesPerView: 1.5,
+      },
+      1400: {
+        slidesPerView: 1.7
+      },
+      1600: {
+        slidesPerView: 2
       }
     }
   });
@@ -429,3 +524,64 @@ ymaps.ready(function () {
 
 
 
+// section navigation
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const navInit = () => {
+    const nav = document.querySelector('.pagination') // ищем блок навигации
+    const links = document.querySelectorAll('.pagination__item') // ищем все навигационные ссылки
+    const sections = document.querySelectorAll('section') // ищем все секции
+    sections.forEach(section => { // для каждой секции
+      if (window.pageYOffset >= section.offsetTop - 300) { // проверяем, если страница прокручена больше, чем расстояние секции от начала страницы
+        links.forEach(link => { // для каждой ссылки
+          link.classList.remove('is-active') // удаляем активный класс
+          if (link.dataset.section === section.dataset.section) { // проверяем, если data-атрибуты ссылки и секции совпадают
+            link.classList.add('is-active') // добавляем ссылке активный класс
+          }
+
+        })
+      }
+
+    })
+  }
+  navInit() // запускаем функцию при загрузке страницы
+  window.addEventListener('scroll', () => {
+    navInit() // запускаем функцию при скролле страницы
+  })
+  window.addEventListener('resize', () => {
+    navInit() // запускаем функцию при ресайзе страницы
+  })
+
+})
+
+$(document).ready(function() {
+
+  function stickySidebar() {
+    var scrollDistance = $(document).scrollTop(),
+      headerHeight = $('[data-section="1"]').outerHeight(true),
+      // sidebarHeight = $('aside').outerHeight(true),
+      footerOffsetTop = $('.js-stop-pagination').offset().top,
+      $header = $('.pagination');
+
+    if( scrollDistance >= headerHeight + 300) {
+      $header.addClass('pagination_fixed');
+      $header.removeClass('pagination_hide');
+    } else {
+      $header.removeClass('pagination_fixed');
+      $header.addClass('pagination_hide');
+    }
+
+    if ( scrollDistance + headerHeight  >= footerOffsetTop) {
+      $header.removeClass('pagination_fixed');
+      $header.addClass('pagination_hide');
+    }
+
+  }
+  stickySidebar();
+
+  $(document).scroll(function() {
+    stickySidebar();
+  });
+
+});

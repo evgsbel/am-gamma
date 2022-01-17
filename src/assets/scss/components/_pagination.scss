@@ -1,6 +1,19 @@
 .pagination {
   width: 100%;
   height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100px;
+  height: 500px;
+  @include r(1024) {
+    display: none;
+  }
+  &_fixed {
+    opacity: 1;
+  }
+  &_hide {
+    opacity: 0;
+  }
   @include r(768) {
     display: none;
   }
