@@ -17349,7 +17349,7 @@ ul {
 /* line 494, src/assets/scss/pages/_home.scss */
 .control__swiper {
   margin: -50px 0px;
-  padding: 50px 0px;
+  padding: 50px 25px 50px 15px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -17377,7 +17377,7 @@ ul {
 /* line 508, src/assets/scss/pages/_home.scss */
 .control .js-control-slider--lt,
 .control .js-control-slider--bt {
-  padding-left: 15px;
+  padding-left: 35px;
   padding-right: 15px;
 }
 

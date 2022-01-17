@@ -196,6 +196,7 @@ var swpTop = new Swiper('.js-control-slider--lt', {
   thumbs: {
     swiper: swpBot
   },
+  loop: true,
   effect: "creative",
   slidesPerView: 1.2,
   // sets the effect to coverflow
@@ -232,6 +233,7 @@ var swpTop = new Swiper('.js-control-slider--lt', {
 var swpTop = new Swiper('.js-control-slider--bt', {
   speed: 300,
   watchSlidesProgress: true,
+  loop: true,
   effect: "creative",
   slidesPerView: 1.2,
   // sets the effect to coverflow

@@ -493,7 +493,7 @@
   }
   &__swiper {
     margin: -50px 0px;
-    padding: 50px 0px;
+    padding: 50px 25px 50px 15px;
     @include r(600) {
       padding-right: 15px;
       padding-left: 15px;
@@ -507,7 +507,7 @@
   }
   .js-control-slider--lt,
   .js-control-slider--bt {
-    padding-left: 15px;
+    padding-left: 35px;
     padding-right: 15px;
     @include r(1024) {
       display: none;
